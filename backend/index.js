@@ -4,7 +4,7 @@ const path=require('path')
 const app= express();
 const bodyParser=require('body-parser')
 const cors=require("cors");
-const PORT=process.env.PORT|| 8080;
+const PORT=process.env.PORT|| 5050;
 
 
 const mysql=require('mysql');
@@ -206,37 +206,23 @@ console.log(result)
 })
 })
 
-//for post description table
-
-
-app.post('/api/descrip',(req,res)=>{
-  
-    const price=req.body.domesticshipping;
-    const domesticshipping=req.body.domesticshipping;
-    const internationalshipping=req.body.internationalshipping;
-    const shipin=req.body.shipin;
-    const  category=req.body.category;
-    const  subcategory=req.body.subcategory;
-    const  productname=req.body.productname;
-    const  avaliability=req.body.avaliability;
-    const  size=req.body.size;
-    const  productdescription=req.body.productdescription;
-    const market=req.body.market;
-  
-   const sqlInsert="INSERT INTO description (price,domesticshipping,internationalshipping,shipin,category,subcategory,productname,avaliability,size,productdescription,market)VALUES(?,?,?,?,?,?,?,?,?,?,?)"
-    db.query(sqlInsert,[price,domesticshipping,internationalshipping,shipin,category,subcategory,productname,avaliability,size,productdescription,market],(err,result)=>{
+//for contactme table
+app.post('/contactme',(req,res)=>{
+    const Firstname=req.body.Firstname;
+    const Lastname=req.body.Lastname;
+    const Email=req.body.Email;
+    const Message=req.body.Message;
+   const sqlInsert="INSERT INTO Contactme (Firstname,Lastname,Email,Message)VALUES(?,?,?,?)"
+    db.query(sqlInsert,[Firstname,Lastname,Email,Message],(err,result)=>{
 console.log(result)
 console.log(err)
    })
   console.log(err)
-
   //  console.log(req)
 })
 
-//get from cost
-
-app.get('/api/getcustomer',(req,res)=>{
-    const sqlSelect="SELECT * From customers";
+app.get('/contactme',(req,res)=>{
+    const sqlSelect="SELECT * From Contactme";
     db.query(sqlSelect,(err,result)=>{
         console.log(result)
         res.send(result)
@@ -311,7 +297,7 @@ app.get('/api/getacctsetting',(req,res)=>{
 
 
 app.listen(process.env.PORT || PORT,()=>{
-    console.log("server running on port 8080")
+    console.log("server running on port 5050")
 })
 
 
