@@ -149,48 +149,21 @@ app.put('/updateprofile',upload.single('file'),(req,res)=>{
 
 
   app.post('/api/insert',upload.single('avatar'),async (req,res)=>{
-   
-     
-       const price=req.body.price;
-       const domesticshipping=req.body.domesticshipping;
-       const internationalshipping=req.body.internationalshipping;
-       const shipin=req.body.shipin;
-       const  category=req.body.category;
-       const  subcategory=req.body.subcategory;
-       const  productname=req.body.productname;
-       const  avaliability=req.body.avaliability;
-       const  size=req.body.size;
-       const  productdescription=req.body.productdescription;
-       const market=req.body.market;
+       const Aboutit=req.body.Aboutit;
+       const Heading=req.body.Heading;
        const productimage=req.file.path;
-
-    
    console.log(req.body)
    //console.log(req.body.productdescription)
    console.log(req.body.data);
-   const sqlInsert="INSERT INTO productsinfo (productimage,price,domesticshipping,internationalshipping,shipin,category,subcategory,productname,avaliability,size,productdescription,market)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"
-   db.query(sqlInsert,[productimage,price,domesticshipping,internationalshipping,shipin,category,subcategory,productname,avaliability,size,productdescription,market],(err,result)=>{
+   const sqlInsert="INSERT INTO My service (productimage,Aboutit,Heading)VALUES(?,?,?)"
+   db.query(sqlInsert,[productimage,Heading,Aboutit],(err,result)=>{
 console.log(result)
 console.log(err)
-
    })
-
-
-   console.log(req.body.market);
-   console.log(req.body.avaliability)
-   console.log(req.body.domesticshipping)
-   console.log(req.body.internationalshipping)
-   console.log(req.body.productname)
-   console.log(req.body.productdescription)
-   console.log(req.body.price)
-   console.log(req.body.size)
-   console.log(req.body.shipin)
-console.log(req.body.subcategory)
-   console.log(req.body.category)
+   console.log(req.body.Heading)
+console.log(req.body.Aboutit)
    console.log(req.files)
    console.log(req.avatar)
-   
-   
    })
    
    
