@@ -117,8 +117,9 @@ app.post('/file',upload.single('file'), function(req, res) {
       console.log(req.files);
       const text=req.body.text;
       const file=req.file.path;
-    const sqlInsert="INSERT INTO profile (profimage,textaboutme)VALUES(?,?)"
-    db.query(sqlInsert,[profimage,textaboutme],(err,result)=>{
+      const textarea=req.body.textarea;
+    const sqlInsert="INSERT INTO ervice (text,file,textare)VALUES(?,?,?)"
+    db.query(sqlInsert,[text,file,textarea],(err,result)=>{
  console.log(result)
  console.log(err)
     })
@@ -126,7 +127,7 @@ app.post('/file',upload.single('file'), function(req, res) {
 
 
 app.get('/file',(req,res)=>{
-    const sqlSelect="SELECT * FROM made";
+    const sqlSelect="SELECT * FROM service";
     db.query(sqlSelect,(err,result)=>{
         console.log(result)
         res.send(result)      
@@ -148,24 +149,29 @@ app.put('/updateprofile',upload.single('file'),(req,res)=>{
 })
 
 
-  app.post('/api/insert',upload.single('avatar'),async (req,res)=>{
-       const Aboutit=req.body.Aboutit;
-       const Heading=req.body.Heading;
-       const productimage=req.file.path;
-   console.log(req.body)
-   //console.log(req.body.productdescription)
-   console.log(req.body.data);
-   const sqlInsert="INSERT INTO My service (productimage,Aboutit,Heading)VALUES(?,?,?)"
-   db.query(sqlInsert,[productimage,Heading,Aboutit],(err,result)=>{
+app.post('/api/insert',upload.single('avatar'),async (req,res)=>{
+   
+    const  productdescription=req.body.productdescription;
+    const market=req.body.market;
+    const productimage=req.file.path;
+
+ 
+console.log(req.body)
+//console.log(req.body.productdescription)
+console.log(req.body.data);
+const sqlInsert="INSERT INTO service (productimage,productdescription,market)VALUES(?,?,?)"
+db.query(sqlInsert,[productdescription,market,productimage],(err,result)=>{
 console.log(result)
 console.log(err)
-   })
-   console.log(req.body.Heading)
-console.log(req.body.Aboutit)
-   console.log(req.files)
-   console.log(req.avatar)
-   })
-   
+})
+console.log(req.body.productdescription)
+console.log(req.body.market)
+console.log(req.files)
+console.log(req.avatar)
+
+
+})
+
    
 
 
