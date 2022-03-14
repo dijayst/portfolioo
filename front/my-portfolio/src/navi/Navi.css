@@ -1,0 +1,102 @@
+
+ .header_section{
+    word-spacing: 0rem;
+    height: 80px;
+    border: 2px solid red;
+    padding: 0px;
+    margin: 0px;
+    
+
+}
+b{
+    font-size: 150%;
+}
+
+.navbar-nav{
+    border: 2px solid red;
+    display: flex;
+    float: right;
+    width: auto;
+    margin: -1.9% 4% 0% 0%;
+
+}
+
+.cpy_{
+    background-color: red;
+    border: 1px solid red;
+}
+footer{
+    background-color:gray;
+    height: 300px;
+    margin: 0px;
+    padding: 0px;
+bottom: 0px;
+left: 0px;
+right: 0px;
+position: absolutec;
+}
+
+.col-md-5{
+float: right;
+margin: -19.9% 4% 0% 0%;
+border: 1px solid purple;
+}
+
+.col-md-4{
+    
+margin: 0% 4% 8% 0%;
+
+}
+.widget_menu{
+margin: -10.9% 9% 0% 35%;
+}
+.sub{
+    height: 40px;
+    background-color: yellow;
+}
+.subb{
+    height: 34px;
+    width: 200px;
+}
+.contact{
+    border-top:4px;
+    height: 23px;
+    width: 200px;
+}
+
+.carousel-itemm{
+    float: right;
+    background-color: red;
+margin: 0% -1% 0% 50%;
+}
+
+
+.carousel-items{
+    float: left;
+    background-color: rgb(45, 119, 51);
+margin: -20% 50% 0% 0%;
+border: 4px solid plum;
+}
+
+
+
+
+
+
+.carousel-itemO{
+
+    margin: 0% -1% 0% 70%;
+    background-color: purple;
+    }
+    
+    .carousel-item1{
+        background-color: rgb(150, 182, 8);
+        margin: -17% 70% 0% 0%;
+    
+    
+    }
+    .carousel-itemm2{
+        background-color: royalblue;
+    margin:-14% 35% -5% 35%;
+    }
+    

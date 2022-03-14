@@ -1,11 +1,10 @@
 
-import React from 'react'
-import './App.css';
-
+import Carrier from './navi/Carrier';
+import './navi/Navi.css';
 function App() {
   return (
     <div className="App">
-     
+      <Carrier/>
     </div>
   );
 }
