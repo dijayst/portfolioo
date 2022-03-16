@@ -1,5 +1,11 @@
-$light-color:rgb(104, 85, 85);
-
+$light-color:#8ec020;
+$background:#0b0e39;
+$white:#eeeee4;
+$whiter:#fff;
+$color:#333;
+$anoth:#23262a;
+$foote:#f4f4f8;
+$backgroundcolo:#ffffff;
 *{
     margin: 0px;
     padding: 0px;
@@ -7,17 +13,9 @@ $light-color:rgb(104, 85, 85);
 }
 
 
-.header_section{
-    word-spacing: 0rem;
-    height: 80px;
-    border: 2px solid red;
-    padding: 0px;
-    margin: 0px;
-    
-
-}
 b{
     font-size: 150%;
+    color: $color#333;
 }
 
 footer{
@@ -59,7 +57,7 @@ position: absolutec;
 
         
 .cpy_{
-    background-color: red;
+    
     border: 1px solid red;
 }
 
@@ -73,7 +71,7 @@ position: absolutec;
 
 .carousel-itemm{
     float: right;
-    background-color: red;
+
 margin: 0% -1% 0% 50%;
 }
 
@@ -104,12 +102,13 @@ border: 4px solid plum;
     .header_section{
         background-color: yellow;
             .navbar{
-                background-color: rgb(24, 23, 23);
+                background-color: $whiter;
+                
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 .nav-links{
-                    color: rgb(255, 142, 0);
+                    color: $color;
 
                 }
                                 
@@ -159,9 +158,12 @@ padding:0px;
     
 }
 .gitimage{
-    background-image:url(../navi/nab.jpg);
-    height:50%;
-    width:auto;
+   height: 5%;
+  img{
+    display: block; /* remove extra space below image */
+width: 100%;
+height: 510px;
+}
 }
 
 

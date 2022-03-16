@@ -45,7 +45,8 @@ return(
 title={item.productimage}
  subheader="legend"/>
  <img src={item.market} alt="hrk" height="70px" width="70px"/>
-< CardMedia image={item.market}/>
+< CardMedia image={item.market}
+/>
 <CardContent>  <Typography>{item.productdescription}</Typography>
 </CardContent>
 </Card>
@@ -58,10 +59,14 @@ title={item.productimage}
                              </div>
 
 <div className="gitimage">
+   
+ <img src={nab} alt="hrk" height="70px" width="70px"/>
 <h4>WANTS TO CHECK SOME OWESOME PROJECT I'M wORKING ON? FEEL FREE</h4>
-<Button variant="contained" component={Link} to="/https://github.com/dijayst">
+<Button variant="contained" component={Link} to="https://github.com/dijayst">
 SEE ME ON GITHUB
 </Button>
+<button>
+<a rel="noopener noreferrer" href="https://github.com/dijayst" target="_blank">Link Here</a></button>
 </div>
 <hr/>
 <div>

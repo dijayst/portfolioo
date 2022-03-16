@@ -11,7 +11,7 @@ import Table from '../Dashboard/Table';
 import Homee from '../Dashboard/Homee';
 import Sidenav from '../Dashboard/Sidenav'
 import Whatido from '../Dashboard/Whatido'
-import Redirect from './Redirect'
+//import Redirect from './Redirect'
 const Carrier = () => {
     return (
         <div>
@@ -22,9 +22,23 @@ const Carrier = () => {
                 <Routes>  
                     <Route path='/' element={<Home/>}/>
                     <Route
+            path="/privacy-policy"
+            component={() => {
+              window.location.replace('https://github.com/dijayst');
+              return null;
+            }}
+          />
+                    <Route
   path="/gitprofile"
-  element={<Redirect/>}
-  loc="/https://github.com/dijayst"
+  component={() => {
+    var link = document.createElement("a");
+    link.href = "https://www.google.com/";
+    document.body.appendChild(link);
+
+    link.click();
+    return null;
+  }
+}
   />
                     <Route path='/dashboard' element={<Homee/>}/>
 

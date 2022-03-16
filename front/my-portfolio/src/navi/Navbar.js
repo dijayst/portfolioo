@@ -49,22 +49,6 @@ const Navbar = () => {
               Aboutme <i className='fas fa-caret-down' />
             </Link>
            
-                           <ul className="dropdown-menu">
-                              <li><Link
-              to='/Blog'
-              className='nav-links'
-            >
-              Blog <i className='fas fa-caret-down' />
-            </Link>
-           </li>
-                              <li><Link
-              to='/Contact'
-              className='nav-links'
-            >Contact
-          <i className='fas fa-caret-down' />
-            </Link>
-           </li>
-                           </ul>
                         </li>
                         <li className="nav-item">
                         <Link
