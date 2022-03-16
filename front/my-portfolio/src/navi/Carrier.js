@@ -11,16 +11,21 @@ import Table from '../Dashboard/Table';
 import Homee from '../Dashboard/Homee';
 import Sidenav from '../Dashboard/Sidenav'
 import Whatido from '../Dashboard/Whatido'
-
+import Redirect from './Redirect'
 const Carrier = () => {
     return (
         <div>
+        
              <BrowserRouter>
                 <Navbar/>
                 <hr/>
                 <Routes>  
                     <Route path='/' element={<Home/>}/>
-
+                    <Route
+  path="/gitprofile"
+  element={<Redirect/>}
+  loc="/https://github.com/dijayst"
+  />
                     <Route path='/dashboard' element={<Homee/>}/>
 
                     <Route path='/dashboa' element={<Whatido/>}/>

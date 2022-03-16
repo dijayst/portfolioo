@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="">
 
          <header className="header_section">
-            <div className="container">
+            <div className="nav-container">
                <nav className="navbar navbar-expand-lg custom_nav-container ">
                <Link
               to='/'
@@ -27,7 +27,7 @@ const Navbar = () => {
             </Link>
            
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className=""> </span>
+                  <span className=""> helo</span>
                   </button>
                   <div className="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul className="navbar-nav">

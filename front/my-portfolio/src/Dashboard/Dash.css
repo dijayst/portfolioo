@@ -1,63 +1,4 @@
 
-.stretch-card {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    -webkit-justify-content: stretch;
-    justify-content: stretch; }
-    .stretch-card > .card {
-      width: 100%;
-      min-width: 100%; }
-
-      
-
-      .card {
-        border-radius: 0.25rem; }
-        .card .card-body {
-          padding: 1.75rem 1.5625rem; }
-          .card .card-body + .card-body {
-            padding-top: 1rem; }
-        .card .card-title {
-          color: #ffffff;
-          margin-bottom: 1.125rem;
-          text-transform: capitalize; }
-        .card .card-subtitle {
-          font-weight: normal;
-          margin-top: 0.625rem;
-          margin-bottom: 0.625rem; }
-        .card .card-description {
-          color: #bfbfbf;
-          font-weight: 300; }
-        .card.card-outline-success {
-          border: 1px solid #00d25b; }
-        .card.card-outline-primary {
-          border: 1px solid #0090e7; }
-        .card.card-outline-warning {
-          border: 1px solid #ffab00; }
-        .card.card-outline-danger {
-          border: 1px solid #fc424a; }
-        .card.card-rounded {
-          border-radius: 5px; }
-        .card.card-faded {
-          background: #b5b0b2;
-          border-color: #b5b0b2; }
-        .card.card-circle-progress {
-          color: #ffffff;
-          text-align: center; }
-        .card.card-img-holder {
-          position: relative; }
-          .card.card-img-holder .card-img-absolute {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%; }
-        .card.corona-gradient-card {
-          background-image: linear-gradient(to left, #d41459, #911a6c);
-          border-radius: 6px; }
-          .card.corona-gradient-card .gradient-corona-img {
-            height: 85px; }
-     
 
             
   table {
@@ -136,4 +77,11 @@
     font-weight: bold;
     color: tomato;
   }
+  
+
+
+
+
+
+
   
