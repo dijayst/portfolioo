@@ -1,11 +1,35 @@
 import React,{useState,useEffect} from 'react'
-import { Link } from 'react-router-dom';
 import nab from './nab.jpg';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import{Card,CardContent,CardHeader,CardMedia} from '@material-ui/core';
-import axios from 'axios'
+import{Card,CardContent,CardHeader} from '@material-ui/core';
+import axios from 'axios';
+import { makeStyles } from '@material-ui/core';
+
+
+const useStyles=makeStyles({
+   btn:{
+      height:"40%",
+      width:"100%",
+      display:"grid",
+       gridTemplateColumns:"300px 300px 300px",
+       gridTemplateRows:"250px",
+       gridGap:"30px 200px"
+
+   },
+   card:{
+      backgroundColor:"#002c3e",
+      textAlign:"center",
+      color:"#ffffff"
+
+   }
+
+})
 const Home = () => {
+   const classes=useStyles()
+   const style={
+      textAlign:"center",
+      lineheight: 6.5,
+   }
    const [whatido, setwhatido] = useState([])
    
   useEffect(() => {
@@ -34,19 +58,19 @@ const Home = () => {
    </h2>
 </div>
 
-<div className="cardcontent">
+<div className={classes.btn}>
 
 {
    whatido.map((item)=>{
 return(
    
-<Card key={item.id}>
+<Card key={item.id} className={classes.card}>
+   
+ <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
 <CardHeader
 title={item.productimage}
- subheader="legend"/>
- <img src={item.market} alt="hrk" height="70px" width="70px"/>
-< CardMedia image={item.market}
-/>
+ />
+
 <CardContent>  <Typography>{item.productdescription}</Typography>
 </CardContent>
 </Card>
@@ -61,37 +85,54 @@ title={item.productimage}
 <div className="gitimage">
    
  <img src={nab} alt="hrk" height="70px" width="70px"/>
-<h4>WANTS TO CHECK SOME OWESOME PROJECT I'M wORKING ON? FEEL FREE</h4>
-<Button variant="contained" component={Link} to="https://github.com/dijayst">
-SEE ME ON GITHUB
-</Button>
+<h4>WANTS TO CHECK SOME AWESOME PROJECT I'M wORKING ON? FEEL FREE</h4>
 <button>
-<a rel="noopener noreferrer" href="https://github.com/dijayst" target="_blank">Link Here</a></button>
+<a rel="noopener noreferrer" href="https://github.com/dijayst" target="_blank">SEE ME ON GITHUB</a></button>
 </div>
-<hr/>
+<br/><br/>
 <div>
 <h5> MY STACK</h5>
 slider_bg_box
+<img src={nab} alt="hrk" height="70px" width="70px"/>
 </div>
-<hr/>
+<br/>
+<br/>
 <div>
-<h5> 
-WHAT MY CLIENT SAY
+<h5 style={style}> 
+Customer's Testimonial
 </h5>
+{
+   whatido.map((item)=>{
+return(
+   
+<Card key={item.id} className={classes.card}>
+   
+ <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
+<CardHeader
+title={item.productimage}
+subheader="customer"
+ />
+
+<CardContent>  <Typography>{item.productdescription}</Typography>
+</CardContent>
+</Card>
+
+
+)
+   })
+}
 
 </div>
 
 
-<div className="gitimage">
+<div className="gitimag">
 <h4>I AM EVERYWHERE !</h4>
 <img src={nab} alt="ghh"height="80px" />
 
 <img src={nab} alt="ghh"height="80px" />
 
 </div>
-<hr/>
 
-   <br/>
         </div>
         
     )

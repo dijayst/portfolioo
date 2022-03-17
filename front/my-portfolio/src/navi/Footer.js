@@ -20,12 +20,12 @@ const Footer = () => {
             </Link>
            
                       </div>
-                  j    <div className="information_f">
+                     <div className="information_f">
                         <p><strong>ADDRESS:</strong> lagos,Nig</p>
                         <p><strong>TELEPHONE:</strong> +2348154466302</p>
                         <p><strong>EMAIL:</strong> olubiyisther@gmail.com</p>
                       </div>
-                j   </div>
+                 </div>
                </div>
                <div className="col-md-8">
                   <div className="row">
@@ -108,11 +108,12 @@ const Footer = () => {
          </div>
 
          
+      </footer>
+      
       <div className="cpy_">
          <p>© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a></p>
       </div>
       
-      </footer>
         </div>
 
         

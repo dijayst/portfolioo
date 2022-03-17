@@ -68,6 +68,14 @@ const Navbar = () => {
               Contact <i className='fas fa-caret-down' />
             </Link>
                         </li>
+                        <li className="nav-item">
+                        <Link
+              to='/dashboard'
+              className='nav-links'
+            >
+              Dashboard <i className='fas fa-caret-down' />
+            </Link>
+                        </li>
                         
                         <form className="form-inline">
                            <button className="btn  my-2 my-sm-0 nav_search-btn" type="submit">

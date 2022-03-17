@@ -7,10 +7,12 @@ import Navbar from './Navbar';
 import {BrowserRouter, Route ,Routes } from 'react-router-dom';
 import Footer from './Footer';
 
-import Table from '../Dashboard/Table';
+import Contactme from '../Dashboard/Contactme';
 import Homee from '../Dashboard/Homee';
 import Sidenav from '../Dashboard/Sidenav'
-import Whatido from '../Dashboard/Whatido'
+import Myservice from '../Dashboard/Myservice'
+import Customersreview from '../Dashboard/Customersreview';
+import Projectdone from '../Dashboard/Projectdone';
 //import Redirect from './Redirect'
 const Carrier = () => {
     return (
@@ -18,35 +20,15 @@ const Carrier = () => {
         
              <BrowserRouter>
                 <Navbar/>
-                <hr/>
+            
                 <Routes>  
                     <Route path='/' element={<Home/>}/>
-                    <Route
-            path="/privacy-policy"
-            component={() => {
-              window.location.replace('https://github.com/dijayst');
-              return null;
-            }}
-          />
-                    <Route
-  path="/gitprofile"
-  component={() => {
-    var link = document.createElement("a");
-    link.href = "https://www.google.com/";
-    document.body.appendChild(link);
-
-    link.click();
-    return null;
-  }
-}
-  />
                     <Route path='/dashboard' element={<Homee/>}/>
-
-                    <Route path='/dashboa' element={<Whatido/>}/>
-
-                    <Route path='/dash' element={<Table/>}/>
-                    
+                    <Route path='/myservice' element={<Myservice/>}/>
+                    <Route path='/contactme' element={<Contactme/>}/>
+                    <Route path='/customers review' element={<Customersreview/>}/> 
 <Route path="/dashe" element={<Sidenav/>}/>
+<Route path="/project" element={<Projectdone/>}/>
 
                     
 

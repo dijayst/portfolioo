@@ -126,6 +126,19 @@ app.post('/file',upload.single('file'), function(req, res) {
     });
 
 
+    app.put('/updateprofile',upload.single('file'),(req,res)=>{
+        console.log(req.body.text);
+          console.log(req.files);
+        const text=req.body.text;
+          const file=req.file.path;
+        const sqlUpdate="UPDATE Set made file=? WHERE file=?";
+        db.query(sqlUpdate,[text,file],(err,result)=>{
+            console.log(result)
+            console.log(err)
+            res.send(result)      
+      })
+    })
+    
 app.get('/file',(req,res)=>{
     const sqlSelect="SELECT * FROM service";
     db.query(sqlSelect,(err,result)=>{
@@ -134,19 +147,6 @@ app.get('/file',(req,res)=>{
   })
 })
 
-
-app.put('/updateprofile',upload.single('file'),(req,res)=>{
-    console.log(req.body.text);
-      console.log(req.files);
-    const text=req.body.text;
-      const file=req.file.path;
-    const sqlUpdate="UPDATE Set made file=? WHERE file=?";
-    db.query(sqlUpdate,[text,file],(err,result)=>{
-        console.log(result)
-        console.log(err)
-        res.send(result)      
-  })
-})
 
 
 app.post('/api/insert',upload.single('avatar'),async (req,res)=>{
@@ -172,7 +172,46 @@ console.log(req.avatar)
 
 })
 
+
+
+
+
+
+    
+app.get('/project',(req,res)=>{
+    const sqlSelect="SELECT * FROM project";
+    db.query(sqlSelect,(err,result)=>{
+        console.log(result)
+        res.send(result)      
+  })
+})
+
+
+
+app.post('/project',upload.single('avatar'),async (req,res)=>{
    
+    const  Projecttitle=req.body.Projecttitle;
+    const about=req.body.about;
+    const productimage=req.file.path;
+
+ 
+console.log(req.body)
+//console.log(req.body.productdescription)
+console.log(req.body.data);
+const sqlInsert="INSERT INTO project (Projecttitle,about,productimage)VALUES(?,?,?)"
+db.query(sqlInsert,[Projecttitle,about,productimage],(err,result)=>{
+console.log(result)
+console.log(err)
+})
+console.log(req.body.Projecttitle)
+console.log(req.body.about)
+console.log(req.files)
+console.log(req.avatar)
+
+
+})
+
+
 
 
 app.delete('/api/deleteimg',(res,req)=>{
@@ -209,71 +248,6 @@ app.get('/contactme',(req,res)=>{
 })
 
 //post from signin
-
-app.post('/api/signin',(req,res)=>{
-    const firstname=req.body.firstname
-    const lastname=req.body.lastname
-    const email=req.body.email
-    const password=req.body.password
-  
-    const sqlInsert="INSERT INTO customers(firstname,lastname,email,password)VALUES(?,?,?,?)"
-    db.query(sqlInsert,[firstname,lastname,email,password],(err,result)=>{
-console.log(result)
-
-    })
-})
-//post login
-
-app.post('/api/login',(req,res)=>{
-    const email=req.body.email
-    const password=req.body.password
-  
-   // const sqlInsert="INSERT INTO customers(email,password)VALUES(?,?)"
-    db.query("SELECT* FROM customers WHERE email=? AND password=?",[email,password],(err,result)=>{
-console.log(result)
-if(err){
-    res.send({err:err})
-}
-if(result.lenght>0){
-    res.send(result);
-}else{
-    res.send({message:"wrong data"})
-    //make the entry data same *
-}
-    })
-})
-
-// post from accountsetting
-
-app.post('/api/acctsetting',(req,res)=>{
-    const firstname=req.body.firstname
-    const lastname=req.body.lastname
-    const instagramhandle=req.body.instagramhandle
-    const bio=req.body.bio
-    const image=req.body.image
-  
-    const sqlInsert="INSERT INTO accountsetting(firstname,lastname,instagramhandle,bio,image)VALUES(?,?,?,?,?)"
-    db.query(sqlInsert,[firstname,lastname,instagramhandle,bio,image],(err,result)=>{
-console.log(result)
-
-    })
-})
-
-
-//get from acctsetting
-
-app.get('/api/getacctsetting',(req,res)=>{
-    const sqlSelect="SELECT * From accountsetting";
-    db.query(sqlSelect,(err,result)=>{
-        console.log(result)
-        res.send(result)
-    })
-})
-
-
-
-
-
 
 app.listen(process.env.PORT || PORT,()=>{
     console.log("server running on port 5050")
