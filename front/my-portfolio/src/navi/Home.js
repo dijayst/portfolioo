@@ -1,31 +1,32 @@
 import React,{useState,useEffect} from 'react'
 import nab from './nab.jpg';
-import Typography from '@material-ui/core/Typography';
-import{Card,CardContent,CardHeader} from '@material-ui/core';
 import axios from 'axios';
-import { makeStyles } from '@material-ui/core';
+import Aboutus from './Aboutus';
 
 
-const useStyles=makeStyles({
+/*
    btn:{
       height:"40%",
       width:"100%",
       display:"grid",
-       gridTemplateColumns:"300px 300px 300px",
+        gridTemplateColumns:"300px 300px 300px",
        gridTemplateRows:"250px",
        gridGap:"30px 200px"
+       
 
    },
    card:{
-      backgroundColor:"#002c3e",
-      textAlign:"center",
-      color:"#ffffff"
+      
+    textAlign:"center",
+    color:#ffffff
 
    }
 
 })
+*/
+
 const Home = () => {
-   const classes=useStyles()
+   
    const style={
       textAlign:"center",
       lineheight: 6.5,
@@ -53,35 +54,7 @@ const Home = () => {
         <div className="container">
             
 <div>
-   <h2 className="content">
-      MY SERVICE
-   </h2>
 </div>
-
-<div className={classes.btn}>
-
-{
-   whatido.map((item)=>{
-return(
-   
-<Card key={item.id} className={classes.card}>
-   
- <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
-<CardHeader
-title={item.productimage}
- />
-
-<CardContent>  <Typography>{item.productdescription}</Typography>
-</CardContent>
-</Card>
-
-
-)
-   })
-}
-<br/>
-                             </div>
-
 <div className="gitimage">
    
  <img src={nab} alt="hrk" height="70px" width="70px"/>
@@ -90,6 +63,9 @@ title={item.productimage}
 <a rel="noopener noreferrer" href="https://github.com/dijayst" target="_blank">SEE ME ON GITHUB</a></button>
 </div>
 <br/><br/>
+
+
+
 <div>
 <h5> MY STACK</h5>
 slider_bg_box
@@ -97,7 +73,8 @@ slider_bg_box
 </div>
 <br/>
 <br/>
-<div>
+
+<div className="tile-row">
 <h5 style={style}> 
 Customer's Testimonial
 </h5>
@@ -105,19 +82,14 @@ Customer's Testimonial
    whatido.map((item)=>{
 return(
    
-<Card key={item.id} className={classes.card}>
-   
+
+   <div key={item.id} className="tile">
  <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
-<CardHeader
-title={item.productimage}
-subheader="customer"
- />
+ <span>Customer</span>
+ <h4>{item.productimage}</h4>
+ <p>{item.productdescription}</p>
 
-<CardContent>  <Typography>{item.productdescription}</Typography>
-</CardContent>
-</Card>
-
-
+</div>
 )
    })
 }
@@ -132,7 +104,7 @@ subheader="customer"
 <img src={nab} alt="ghh"height="80px" />
 
 </div>
-
+<Aboutus/>
         </div>
         
     )

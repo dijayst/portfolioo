@@ -1,9 +1,11 @@
 import React from 'react'
+
 import { Link } from 'react-router-dom';
+import Myservice from './Myservice';
 
 const Aboutus = () => {
     return (
-        <div>
+        <div className="aboutme">
               
 <br/>
          
@@ -53,7 +55,7 @@ const Aboutus = () => {
                                  </div>
                               </div>
 
-
+<Myservice/>
 
 
           </div>

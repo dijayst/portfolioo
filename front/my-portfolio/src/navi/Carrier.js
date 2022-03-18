@@ -38,7 +38,7 @@ const Carrier = () => {
                     
                     <Route path='/Aboutme'exact element={<Aboutus/>}/>
           </Routes>
-          <hr/>
+          
           <Footer/>
           </BrowserRouter>
         </div>

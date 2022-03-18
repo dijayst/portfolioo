@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
+
 const Navbar = () => {
    
   //const [click, setClick] = useState(false);
@@ -32,13 +33,12 @@ const Navbar = () => {
                   <div className="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul className="navbar-nav">
                         <li className="nav-item active">
-                        <Link
-              to='/'
+                        <a  href="Home.js"
               className='nav-links'
               
             >
               Home <i className='fas fa-caret-down' />
-            </Link>
+            </a>
            
                         </li>
                        <li className="nav-item dropdown">
@@ -50,6 +50,23 @@ const Navbar = () => {
             </Link>
            
                         </li>
+                        <li className="nav-item dropdown">
+                       
+              myservice 
+                        </li>
+                        <li className="nav-item dropdown">
+                       
+                       myskill 
+                                 </li>
+                                 <li className="nav-item dropdown">
+                       
+                       education
+                                 </li>
+                                 <li className="nav-item dropdown">
+                       
+                       works 
+                                 </li>
+                               
                         <li className="nav-item">
                         <Link
               to='/Blog'

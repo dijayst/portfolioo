@@ -41,7 +41,7 @@ const Contact = () => {
         <div>
             <div>
                 <h4><b>Contact me</b></h4>
-                <hr/><hr/>
+                
             </div>
             <form onSubmit={handlesubmit}>
                             <label><b>Name</b></label><br/>
