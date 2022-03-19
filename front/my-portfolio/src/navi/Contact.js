@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import twitter from './twitter.jpg';
+import linkedin from './linkedin.jpg';
 const Contact = () => {
     const [input, setinput] = useState(
 {
-    Firstname:"",
-    Lastname:"",
+    Name:"",
     Email:"",
     Message:""
 }
@@ -21,8 +21,7 @@ const Contact = () => {
     const handlesubmit=(e)=>{
         e.preventDefault()
         axios.post("http://localhost:5050/contactme",{
-            Firstname:input.Firstname,
-            Lastname:input.Lastname,
+            Name:input.Name,
             Email:input.Email,
             Message:input.Message,
            })
@@ -40,21 +39,28 @@ const Contact = () => {
     return (
         <div>
             <div>
-                <h4><b>Contact me</b></h4>
-                
-            </div>
+                <h4><b>Contact me</b></h4> 
+                <br/>
+                <br/>
+        <a className="linkedin" href="/"><img  alt="linkedin" height="100px" width="100px" src={linkedin}/></a>
+             <br/>
+              <a className="linkedin" href="/"> <img alt="twitter" height="100px" width="100px" src={twitter}/></a>
+
+
+
+
             <form onSubmit={handlesubmit}>
-                            <label><b>Name</b></label><br/>
-            <input className="contact" type="text" placeholder="firstname"id="Firstname" value={input.Firstname} onChange={handlechange}/> <input className="contact" value={input.Lastname} id="Lastname" type="text" onChange={handlechange} placeholder="lastname"/>
+                            <br/>
+            <input className="contact" value={input.Name} id="Name" type="text" onChange={handlechange} placeholder="Name"/>
 <br/>
             <label><b>Email</b></label><br/>
             <input type="email" className="contact" placeholder="enter your email" id="Email" value={input.Email} onChange={handlechange}/>
             <br/>
             <label><b>Comment or message </b></label><br/>
             <textarea rows="5"  cols="29" value={input.Message} id="Message" onChange={handlechange}>leave a message here</textarea><br/><br/>
-            <button type="submit">submit</button>
+            <button type="submit">send message</button>
             </form>
-
+            </div>
         </div>
     )
 }

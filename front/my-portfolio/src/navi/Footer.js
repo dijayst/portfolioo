@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -121,3 +121,70 @@ const Footer = () => {
 }
 
 export default Footer
+
+
+/*
+.div{
+    margin:0px 0px 0px 300px;
+    position: absolutec;
+footer{
+    background-color:red;
+    height: 300px;
+    margin: 0px;
+    padding: 0px;
+bottom: 0px;
+left: 0px;
+right: 0px;
+
+.col-md-4{
+    
+    margin: 0% 4% 8% 0%;
+    b{
+        color: #131313;
+    }
+    .information_f{
+        color:#131313 ;
+        p{color: $color;}
+    }
+    }
+    
+.widget_menu{
+    margin: -10.9% 9% 0% 35%;
+    }
+
+    .col-md-5{
+        float: right;
+        margin: -19.9% 4% 0% 0%;
+        color: $color;
+        
+.sub{
+    height: 40px;
+    background-color: #f7444e;
+    width: 65px;
+}
+
+.subb{
+    height: 34px;
+    width: 200px;
+}
+        }
+
+   
+
+}
+}  
+
+
+
+.cpy_{
+    
+    background-color:$foot2;
+    border: 4px red;
+    height: 50px;
+    text-align: center;
+    color: $backgroundcolor;
+    a{
+        color: #f7444e;
+    }
+}
+*/

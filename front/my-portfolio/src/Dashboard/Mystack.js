@@ -1,8 +1,9 @@
-import React,{useState} from 'react';
-            import axios from 'axios'
-const Projectdone = () => {
+import React,{useState} from 'react'
+import axios from 'axios';
 
+const Mystack = () => {
 
+    
   const [userinfo, setuserinfo] = useState({
     file:[],
    filepreview:null
@@ -21,12 +22,12 @@ const Projectdone = () => {
 
 
 
+       
 
        const [description, setdescription] = useState({
-        about:"",
-        Projecttitle:"",
-        
-    
+        market:"",
+        productdescription:"",
+        Range:""
         })
         
       console.log({description})
@@ -53,12 +54,12 @@ const Projectdone = () => {
       
         const formdata = new FormData();
         formdata.append('avatar',userinfo.file);
-        formdata.set("about", description.about)
-        
+        formdata.set("market", description.market)
+        formdata.set("Range", description.Range)
     
         //console.log(e.target.files);
        // console.log({description});
-            axios.post("http://localhost:5050/project",formdata,
+            axios.post("http://localhost:5050/stack",formdata,
              /* {headers:{"content-Type":"multipart/form-data"},
             
              productimage:userinfo.file,
@@ -92,29 +93,32 @@ const Projectdone = () => {
          })
         };
     
-    
-       return (
+    return (
         <div className="servicecontainer">
+            
+
 <form onSubmit={handledescrip}>
-<label >Projecttitle :</label><input value={description.Projecttitle} onChange={(e)=>{handleChange(e)}} id="Projecttitle" type="text" placeholder="ENTER YOUR PROJECT DESCRIPTION" />
-<br/>
-   <label>Aboutproject</label>  <textarea rows="5"  cols="29" value={description.about} id="about" onChange={(e)=>{handleChange(e)}} >ABOUT</textarea><br/><br/>
-           
+
+<label>PRICE (USD)</label> <input type="text" id="market"onChange={(e)=>{handleChange(e)}} value={description.market} placeholder="ENTER AMOUNT"/>
 <br/>
 
-<div>
 <input type="file" name="upload_file" onChange={(e)=>{saveFile(e)}} />
-              
+              <br/>
+              <br/>
+ <input type="range" max="100" min="0" step="20"id="Range" value={description.Range} onChange={handleChange}/>
+
               
                  {userinfo.filepreview !==null ?<img src={userinfo.filepreview} height="100px" width="100px" alt="uploadimage"/> :null}
        
-                 </div>    
+                   
 <br/>
 
 <button type="submit">ADD</button>
             </form>
+
+
         </div>
     )
 }
 
-export default Projectdone
+export default Mystack

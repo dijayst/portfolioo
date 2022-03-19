@@ -20,7 +20,7 @@ const [contactmelist, setcontactmelist] = useState([])
    }, [])
 
     return (
-        <div>
+        <div className="servicecontainer">
 
 
  <div className="col-lg-6 grid-margin stretch-card">

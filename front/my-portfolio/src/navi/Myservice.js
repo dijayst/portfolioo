@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
+import Myskill from './Myskill';
 
  
 const Myservice = () => {
@@ -24,26 +25,29 @@ const Myservice = () => {
  
     return (
         
-            
-<div className="containerarray">
+            <div>
+<div className="tile-row">
 {
    whatido.map((item)=>{
 return(
    
-<div className="tile-row">
-   <div key={item.id} className="tile">
+
+   <div key={item.id} className="tile"><p></p>
  <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
  <span>Customer</span>
  <h4>{item.productimage}</h4>
  <p>{item.productdescription}</p>
-   </div>
+
 </div>
 )
    })
 }
+<br/>
+<br/>
 
 </div>
-
+<Myskill/>
+</div>
         
     )
 }

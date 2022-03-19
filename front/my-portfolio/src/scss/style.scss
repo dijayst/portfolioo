@@ -1,13 +1,6 @@
 
-$background:#f8f8f8;
-//$backgroundcolor:#f2f3f7;
-$backing:#2c98f0;
-$again:#000000;
-$text:#5aaef3;
-$tex:#7d7d7d;
 
-$backgroundcolor:#ffffff;
-$foot2:#222222;
+ @import 'config';
 *{
     margin: 0px;
     padding: 0px;
@@ -18,69 +11,12 @@ $foot2:#222222;
     background-color:$backgroundcolor;
     color: $color;
 }
+.imgea{
+    border-radius: 35px;
+}
 b{
     font-size: 150%;
-    color: $color#333;
-}
-.div{
-    margin:0px 0px 0px 300px;
-    position: absolutec;
-footer{
-    background-color:red;
-    height: 300px;
-    margin: 0px;
-    padding: 0px;
-bottom: 0px;
-left: 0px;
-right: 0px;
-
-.col-md-4{
-    
-    margin: 0% 4% 8% 0%;
-    b{
-        color: #131313;
-    }
-    .information_f{
-        color:#131313 ;
-        p{color: $color;}
-    }
-    }
-    
-.widget_menu{
-    margin: -10.9% 9% 0% 35%;
-    }
-
-    .col-md-5{
-        float: right;
-        margin: -19.9% 4% 0% 0%;
-        color: $color;
-        
-.sub{
-    height: 40px;
-    background-color: #f7444e;
-    width: 65px;
-}
-
-.subb{
-    height: 34px;
-    width: 200px;
-}
-        }
-
-   
-
-}
-}  
-.cpy_{
-    
-    background-color:$foot2;
-    border: 4px red;
-    height: 50px;
-    text-align: center;
-    color: $backgroundcolor;
-    a{
-        color: #f7444e;
-    }
+    color: $color;
 }
 .contact{
     border-top:4px;
@@ -88,12 +24,10 @@ right: 0px;
     width: 200px;
 }
 .aboutme{
-    margin:0px 0px 0px 300px;
-.carousel-itemm{
-    float: right;
-
-margin: 0% -1% 0% 50%;
-}}
+    margin: -600px 0px 0px 300px;
+    color: $aboutme;
+    text-align: center;
+}
 
 
 .carousel-items{
@@ -128,6 +62,7 @@ border: 4px solid plum;
                 position: fixed;
                 top: 8.25rem;
                 left: 0;
+                z-index: 0;
             
                 
                 flex-wrap:nowrap;
@@ -135,8 +70,13 @@ border: 4px solid plum;
                 background-color: transparent;
                 border-top-right-radius: 0.5rem;
                 .nav-links{
-                                  
-  
+                    text-decoration: none;
+                    
+                }
+                .nav-links:hover{
+                                 color: #ec5453; 
+                                 background-color: inherit;
+                                 
   
   
                 }
@@ -173,7 +113,7 @@ border: 4px solid plum;
     
     .container{
         height:100%;
-background-color: $light-color;
+background-color: $backgroundcolor;
 margin:0px 0px 0px 300px;
 padding:0px;
 
@@ -186,7 +126,7 @@ padding:0px;
    height: 5%;
    font-size: 40px;
    margin:0px 0px 700px 0px;
-  img{
+  .imge{
     display: block; /* remove extra space below image */
 width: 100%;
 height: 510px;
@@ -194,27 +134,98 @@ height: 510px;
 h4 {
     margin: -300px 0px 0px 0px;
     text-align: center;
-    
+    z-index: 0;
+
 }
 button {
     margin: -200px 0px 0px 0px;
-    
+    z-index: 0;
 }
 }
     .tile-row{
         display: grid;
-       grid-template-columns:0px 270px 270px ;
-       grid-template-rows: 250px;
-       grid-gap:30px 70px ;
-       margin: 0px 0px 0px -10px;
+       
+       grid-template-columns:300px 270px 270px ;
+       grid-template-rows: 250px 250px;
+       grid-gap:30px 30px ;
+       margin: 0px 0px 80px -205px;
+       border-bottom: #ec5453;
 .tile{
     
     text-align: center;
-    background-color: red;
+    background-color:#fff;
     border-radius: 0.3rem;
-    color:#ffffff;
+    color: $color;
 }
     }
 }
 
+    .containerarray{
+        color: $aboutme;
+    }
+
+    .stack{
+        background-color: #f9bf3f;
+    text-align: center;
+    margin: 0px px 0px 0px;
     
+    }
+ @media (max-width:750px){
+     .header_section{
+.navbar{
+    width: 100%;
+    height: 400px;
+    .nav-links{
+        width: 100%;
+        display: inline;
+    }
+}
+ }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    .sidebar{
+        position: fixed;
+        top: 8.25rem;
+        left: 0;
+        z-index: 0;
+    
+        
+        flex-wrap:nowrap;
+        flex-direction: column;
+        background-color: red;
+        border-top-right-radius: 0.5rem;
+       
+    }
+
+
+
+    .servicecontainer{
+
+        height:100%;
+        background-color: gold;
+        margin:0px 0px 0px 300px;
+        padding:0px;
+    }

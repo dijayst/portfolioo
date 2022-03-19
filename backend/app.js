@@ -153,14 +153,15 @@ app.post('/api/insert',upload.single('avatar'),async (req,res)=>{
    
     const  productdescription=req.body.productdescription;
     const market=req.body.market;
+    const Range=req.body.Range
     const productimage=req.file.path;
 
  
 console.log(req.body)
 //console.log(req.body.productdescription)
 console.log(req.body.data);
-const sqlInsert="INSERT INTO service (productimage,productdescription,market)VALUES(?,?,?)"
-db.query(sqlInsert,[productdescription,market,productimage],(err,result)=>{
+const sqlInsert="INSERT INTO service (productimage,Range,productdescription,market)VALUES(?,?,?,?)"
+db.query(sqlInsert,[productdescription,Range,market,productimage],(err,result)=>{
 console.log(result)
 console.log(err)
 })
@@ -174,6 +175,46 @@ console.log(req.avatar)
 
 
 
+
+
+
+
+
+
+
+app.post('/stack',upload.single('avatar'),async (req,res)=>{
+   
+    const  productdescription=req.body.productdescription;
+    const market=req.body.market;
+    const Range=req.body.Range
+    const productimage=req.file.path;
+
+ 
+console.log(req.body)
+//console.log(req.body.productdescription)
+console.log(req.body.data);
+const sqlInsert="INSERT INTO stack (productimage,Range,productdescription,market)VALUES(?,?,?,?)"
+db.query(sqlInsert,[Range,market,productimage],(err,result)=>{
+console.log(result)
+console.log(err)
+})
+console.log(req.body.Range)
+console.log(req.body.market)
+console.log(req.files)
+console.log(req.avatar)
+
+
+})
+
+
+
+app.get('/stack',(req,res)=>{
+    const sqlSelect="SELECT * FROM stack";
+    db.query(sqlSelect,(err,result)=>{
+        console.log(result)
+        res.send(result)      
+  })
+})
 
 
 
@@ -226,12 +267,11 @@ console.log(result)
 
 //for contactme table
 app.post('/contactme',(req,res)=>{
-    const Firstname=req.body.Firstname;
-    const Lastname=req.body.Lastname;
+    const Name=req.body.Name;
     const Email=req.body.Email;
     const Message=req.body.Message;
-   const sqlInsert="INSERT INTO Contactme (Firstname,Lastname,Email,Message)VALUES(?,?,?,?)"
-    db.query(sqlInsert,[Firstname,Lastname,Email,Message],(err,result)=>{
+   const sqlInsert="INSERT INTO Contactme (Name,Email,Message)VALUES(?,?,?)"
+    db.query(sqlInsert,[Name,Email,Message],(err,result)=>{
 console.log(result)
 console.log(err)
    })

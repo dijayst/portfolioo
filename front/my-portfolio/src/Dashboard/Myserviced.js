@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
             import axios from 'axios'
-const Myservice = () => {
+const Myserviced = () => {
 
 
   const [userinfo, setuserinfo] = useState({
@@ -24,8 +24,8 @@ const Myservice = () => {
 
        const [description, setdescription] = useState({
         market:"",
-        productdescription:""
-    
+        productdescription:"",
+        Range:""
         })
         
       console.log({description})
@@ -54,6 +54,7 @@ const Myservice = () => {
         formdata.append('avatar',userinfo.file);
         formdata.set("market", description.market)
         formdata.set("productdescription", description.productdescription)
+        formdata.set("Range", description.Range)
     
         //console.log(e.target.files);
        // console.log({description});
@@ -93,7 +94,7 @@ const Myservice = () => {
     
     
        return (
-        <div>
+        <div className="servicecontainer">
 <form onSubmit={handledescrip}>
 <label >PRUDUCT NAME :</label><input value={description.productdescription} onChange={(e)=>{handleChange(e)}} id="productdescription" type="text" placeholder="ENTER YOUR PRODUCT NAME" />
 <br/>
@@ -102,7 +103,10 @@ const Myservice = () => {
 
 <div>
 <input type="file" name="upload_file" onChange={(e)=>{saveFile(e)}} />
-              
+              <br/>
+              <br/>
+ <input type="range" max="100" min="0" step="20"id="Range" value={description.Range} onChange={handleChange}/>
+
               
                  {userinfo.filepreview !==null ?<img src={userinfo.filepreview} height="100px" width="100px" alt="uploadimage"/> :null}
        
@@ -115,4 +119,4 @@ const Myservice = () => {
     )
 }
 
-export default Myservice
+export default Myserviced

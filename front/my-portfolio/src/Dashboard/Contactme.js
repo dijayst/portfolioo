@@ -20,7 +20,7 @@ const [contactmelist, setcontactmelist] = useState([])
    }, [])
 
     return (
-        <div>
+        <div className="servicecontainer">
 
 
  <div className="col-lg-6 grid-margin stretch-card">
@@ -44,8 +44,7 @@ const [contactmelist, setcontactmelist] = useState([])
                             return(
                               <tr key={item.id}>
                             <td>{item.id}</td>
-                            <td>{item.Firstname}</td>
-                            <td>{item.Lastname}</td>
+                            <td>{item.Name}</td>
                             <td>{item.Email}</td>
                           </tr>
                           

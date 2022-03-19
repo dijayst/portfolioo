@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import Home from './Home'
+import nab from './nab.jpg';
 
 
 const Navbar = () => {
@@ -20,6 +21,9 @@ const Navbar = () => {
          <header className="header_section">
             <div className="nav-container">
                <nav className="navbar navbar-expand-lg custom_nav-container ">
+              <div>
+           <img src={nab}  className="imgea" alt="hrk" height="70px" width="70px"/>
+              </div>
                <Link
               to='/'
               className='nav-links'
@@ -31,16 +35,18 @@ const Navbar = () => {
                   <span className=""> helo</span>
                   </button>
                   <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    
                      <ul className="navbar-nav">
                         <li className="nav-item active">
-                        <a  href="Home.js"
+                        <Link  to="/"
               className='nav-links'
               
             >
               Home <i className='fas fa-caret-down' />
-            </a>
+            </Link>
            
                         </li>
+                        <br/>
                        <li className="nav-item dropdown">
                        <Link
               to='/Aboutme'
@@ -50,23 +56,44 @@ const Navbar = () => {
             </Link>
            
                         </li>
+                        <br/>
                         <li className="nav-item dropdown">
-                       
+                        <Link
+              to='/myservice'
+              className='nav-links'
+              
+            >
               myservice 
+              </Link>
                         </li>
+                        <br/>
                         <li className="nav-item dropdown">
-                       
-                       myskill 
+                        <Link
+              to='/skill'
+              className='nav-links'
+              
+            >
+                       myskill </Link>
                                  </li>
+                                 <br/>
                                  <li className="nav-item dropdown">
-                       
-                       education
+                                 <Link
+              to='/education'
+              className='nav-links'
+              
+            >
+       education</Link>
                                  </li>
+                                 <br/>
                                  <li className="nav-item dropdown">
-                       
-                       works 
+                                 <Link
+              to='/work'
+              className='nav-links'
+              
+            >
+                       works </Link>
                                  </li>
-                               
+                                 <br/>
                         <li className="nav-item">
                         <Link
               to='/Blog'
@@ -77,6 +104,7 @@ const Navbar = () => {
             </Link>
            
                         </li>
+                        <br/>
                         <li className="nav-item">
                         <Link
               to='/Contact'
@@ -84,7 +112,7 @@ const Navbar = () => {
             >
               Contact <i className='fas fa-caret-down' />
             </Link>
-                        </li>
+                        </li><br/>
                         <li className="nav-item">
                         <Link
               to='/dashboard'
@@ -106,6 +134,8 @@ const Navbar = () => {
             </div>
          </header>
         </div>
+        
+        <Home/>
         </div>
     )
 }

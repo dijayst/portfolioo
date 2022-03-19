@@ -1,6 +1,9 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
+
+
 const Sidenav = () => {
+  const location=useLocation()
     return (
         <div>
            <nav className="sidebar sidebar-offcanvas" id="sidebar">
@@ -62,7 +65,7 @@ const Sidenav = () => {
             <span className="nav-link">Navigation</span>
           </li>
           <li className="nav-item menu-items">
-            <Link to="/dashboard">
+            <Link to="/dashboard" className={location.pathname.includes('/dashboard')?'sidebar_active':''}>
               <span className="menu-icon">
                 <i className="mdi mdi-speedometer"></i>
               </span>
@@ -94,7 +97,7 @@ const Sidenav = () => {
             </a>
           </li>
           <li className="nav-item menu-items">
-            <Link to="/myservice">
+            <Link to="/myserviced">
               <span className="menu-icon">
                 <i className="mdi mdi-contacts"></i>
               </span>
@@ -110,16 +113,9 @@ const Sidenav = () => {
               <i className="menu-arrow"></i>
             </Link>
             </li>
-          <li className="nav-item menu-items">
-            <a className="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
-              <span className="menu-icon">
-                <i className="mdi mdi-file-document-box"></i>
-              </span>
-              <span className="menu-title">contact me</span>
-            </a>
-          </li>
         </ul>
       </nav>
+
        
         </div>
     )
