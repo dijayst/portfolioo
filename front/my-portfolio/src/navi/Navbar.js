@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
-import Home from './Home'
+
 import nab from './nab.jpg';
 
 
@@ -16,7 +16,7 @@ console.log({click})
     return (
         <div>
             
-      <div className="">
+      <div className="sidebar">
 
          <header className="header_section">
             <div className="nav-container">
@@ -50,7 +50,7 @@ console.log({click})
                        <li className="nav-item dropdown">
                        <Link
               to='/Aboutme'
-              className='nav-links'
+              className={window.location.pathname==="/Aboutme"? 'nav-links':""}
             >
               Aboutme <i className='fas fa-caret-down' />
             </Link>
@@ -135,7 +135,7 @@ console.log({click})
          </header>
         </div>
         
-        <Home/>
+        
         </div>
     )
 }

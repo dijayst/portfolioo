@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
-import Myskill from './Myskill';
+
 
  
 const Myservice = () => {
@@ -22,17 +22,28 @@ const Myservice = () => {
        console.log("i deny")
      })
     }, [])
- 
+
+    
+ const style={
+  para:{
+textAlign:"center"
+    },
+
+ }
     return (
         
-            <div>
+            <div className="content"><div></div>
+                <p style={style.para}><b>
+      MY SERVICES</b>
+   </p>
 <div className="tile-row">
+  
 {
    whatido.map((item)=>{
 return(
    
 
-   <div key={item.id} className="tile"><p></p>
+   <div key={item.id} className="tile">
  <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
  <span>Customer</span>
  <h4>{item.productimage}</h4>
@@ -46,7 +57,7 @@ return(
 <br/>
 
 </div>
-<Myskill/>
+
 </div>
         
     )

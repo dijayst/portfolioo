@@ -11,7 +11,7 @@ const Homee = () => {
              <div className="row">
               <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <div className="card">
-                  <div className="carousel-itemO">
+                  <div className="carousel-itemO0">
                     <div className="row">
                       <div className="col-9">
                         <div className="d-flex align-items-center align-self-start">
@@ -53,7 +53,7 @@ const Homee = () => {
               </div>
               <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <div className="card">
-                  <div className="carousel-itemm2">
+                  <div className="carousel-itemm22">
                     <div className="row">
                       <div className="col-9">
                         <div className="d-flex align-items-center align-self-start">
@@ -96,7 +96,7 @@ const Homee = () => {
 
 
 
-  <div className="row ">
+  <div className="roww ">
               <div className="col-12 grid-margin">
                 <div className="card">
                   <div className="card-body">

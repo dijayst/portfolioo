@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
             import axios from 'axios'
+import { Link } from 'react-router-dom';
 const Myserviced = () => {
 
 
@@ -95,6 +96,9 @@ const Myserviced = () => {
     
        return (
         <div className="servicecontainer">
+          <button><Link to="/addedservice">
+            addedservice
+          </Link></button>
 <form onSubmit={handledescrip}>
 <label >PRUDUCT NAME :</label><input value={description.productdescription} onChange={(e)=>{handleChange(e)}} id="productdescription" type="text" placeholder="ENTER YOUR PRODUCT NAME" />
 <br/>
@@ -113,7 +117,7 @@ const Myserviced = () => {
                  </div>    
 <br/>
 
-<button type="submit">ADD</button>
+<button type="submit">ADD</button> 
             </form>
         </div>
     )

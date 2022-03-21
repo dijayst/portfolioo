@@ -1,7 +1,7 @@
 import React from 'react'
 import nab from './nab.jpg';
 
-import Aboutus from './Aboutus';
+//import Aboutus from './Aboutus';
 
 
 /*
@@ -30,10 +30,10 @@ const Home = () => {
    
 
     return (
-        <div className="container">
+        <div className="content" >
             
-<div>
-</div>
+<div className="container">
+
 <div className="gitimage">
    
  <img src={nab}  className="imge" alt="hrk" height="70px" width="70px"/>
@@ -43,7 +43,7 @@ const Home = () => {
 </div>
 <br/><br/>
 
-<Aboutus/>
+</div>
         </div>
         
     )

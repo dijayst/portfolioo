@@ -1,9 +1,9 @@
 import React from 'react'
-import Myservice from './Myservice';
+
 
 const Aboutus = () => {
     return (
-        <div className="aboutme">
+        <div className="content">
 <br/><br/>
            <p>ABOUT US
 WHO AM I?
@@ -13,7 +13,7 @@ Even the all-powerful Pointing has no control about the blind texts it is an alm
 
 <br/>
 <br/>
-<Myservice/>
+
 
 
           </div>

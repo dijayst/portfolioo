@@ -184,22 +184,17 @@ console.log(req.avatar)
 
 app.post('/stack',upload.single('avatar'),async (req,res)=>{
    
-    const  productdescription=req.body.productdescription;
-    const market=req.body.market;
-    const Range=req.body.Range
     const productimage=req.file.path;
 
  
 console.log(req.body)
 //console.log(req.body.productdescription)
 console.log(req.body.data);
-const sqlInsert="INSERT INTO stack (productimage,Range,productdescription,market)VALUES(?,?,?,?)"
-db.query(sqlInsert,[Range,market,productimage],(err,result)=>{
+const sqlInsert="INSERT INTO stack (productimage)VALUES(?)"
+db.query(sqlInsert,[productimage],(err,result)=>{
 console.log(result)
 console.log(err)
 })
-console.log(req.body.Range)
-console.log(req.body.market)
 console.log(req.files)
 console.log(req.avatar)
 
@@ -215,6 +210,38 @@ app.get('/stack',(req,res)=>{
         res.send(result)      
   })
 })
+
+
+
+
+
+
+app.post('/range',async (req,res)=>{
+   
+    const Rangeinper=req.body.Rangeinper;
+    const name=req.body.name
+   
+console.log(req.body)
+//console.log(req.body.productdescription)
+console.log(req.body.data);
+const sqlInsert="INSERT INTO Range (Rangeinper,name)VALUES(?,?)"
+db.query(sqlInsert,[Rangeinper,name],(err,result)=>{
+console.log(result)
+console.log(err)
+})
+
+})
+
+
+
+app.get('/range',(req,res)=>{
+    const sqlSelect="SELECT * FROM Range";
+    db.query(sqlSelect,(err,result)=>{
+        console.log(result)
+        res.send(result)      
+  })
+})
+
 
 
 

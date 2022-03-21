@@ -1,6 +1,5 @@
 import axios  from 'axios';
 import React,{useEffect, useState} from 'react'
-import Eductaion from './Eductaion';
 import nab from './nab.jpg';
 
 
@@ -26,7 +25,7 @@ console.log(range)
             
     })
     return (
-        <div>
+        <div className="content">
         <div className="stack">
            
 
@@ -36,8 +35,7 @@ console.log(range)
     return(
         <div key={item.id}>
             <p>{item.market}</p>
-            <img src={item.productimage} alt={item.productimage}/>
-<input type="range" max="100" min="0" step="20" value={item.Range} />{item.Range}
+            <img src={item.productimage} alt={item.productimage} height="170px" width="170px"/>
 </div>
     )
 })}
@@ -56,7 +54,7 @@ The Big Oxmox advised her not to do so, because there were thousands of bad Comm
 
 RANGE
         </div>
-        <Eductaion/>
+        
         </div>
     )
 }

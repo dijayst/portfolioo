@@ -43,10 +43,25 @@ border: 4px solid plum;
 
 
 
-.carousel-itemO{
+.carousel-itemO0{
 
-    margin: 0% -1% 0% 70%;
+    margin: -10% 60% 20% 10%;
     background-color: purple;
+    }
+    
+    .carousel-item1{
+        background-color: rgb(150, 182, 8);
+        margin: -10% 70% 0% 2%;
+    
+    
+    }
+    .card-body{
+        background-color: rgb(35, 141, 100);
+        margin:-6.5% 10% -5% 65%;
+    }
+    .carousel-itemm22{
+        background-color: rgb(35, 61, 141);
+    margin:-6.5% 40% -5% 35%;
     }
     
 
@@ -55,19 +70,18 @@ border: 4px solid plum;
 
 
     .header_section{
-
         
 
             .navbar{
                 position: fixed;
-                top: 8.25rem;
+                top: 5px;
                 left: 0;
                 z-index: 0;
-            
-                
+                width: 20%;
+                height: 100%;
                 flex-wrap:nowrap;
                 flex-direction: column;
-                background-color: transparent;
+                background-color: red;
                 border-top-right-radius: 0.5rem;
                 .nav-links{
                     text-decoration: none;
@@ -97,31 +111,15 @@ border: 4px solid plum;
 
 
     
-    .carousel-item1{
-        background-color: rgb(150, 182, 8);
-        margin: -17% 70% 0% 0%;
-    
-    
-    }
-    .carousel-itemm2{
-        background-color: rgb(35, 61, 141);
-    margin:-14% 35% -5% 35%;
-    }
-    
 
 
     
     .container{
         height:100%;
 background-color: $backgroundcolor;
-margin:0px 0px 0px 300px;
+margin:0px 0px 0px 70px;
 padding:0px;
 
-
-.marketimage{
-    border-radius: 33px;
-    
-}
 .gitimage{
    height: 5%;
    font-size: 40px;
@@ -142,22 +140,38 @@ button {
     z-index: 0;
 }
 }
-    .tile-row{
-        display: grid;
-       
-       grid-template-columns:300px 270px 270px ;
-       grid-template-rows: 250px 250px;
-       grid-gap:30px 30px ;
-       margin: 0px 0px 80px -205px;
-       border-bottom: #ec5453;
-.tile{
-    
-    text-align: center;
-    background-color:#fff;
-    border-radius: 0.3rem;
-    color: $color;
+
+
+
+
+
+
+
+
+
 }
-    }
+
+.tile-row{
+    
+    display: grid;
+   grid-template-columns:300px 270px 270px ;
+   grid-template-rows: 250px 250px;
+   grid-gap:30px 30px ;
+   margin: 0px 0px 80px 80px;
+   
+.tile{
+
+text-align: center;
+background-color:green;
+border-radius: 0.3rem;
+color: $color;
+
+.marketimage{
+    border-radius: 33px;
+    
+}
+
+}
 }
 
     .containerarray{
@@ -171,7 +185,13 @@ button {
     
     }
 
-
+.content{
+    
+    margin: 1% 0% 0% 22%;
+    height: 100%;
+    background-color: yellow;
+    
+}
 
 
 
@@ -184,14 +204,13 @@ button {
 
     .sidebar{
         position: fixed;
-        top: 8.25rem;
+        height: 100%;
         left: 0;
         z-index: 0;
-    
-        
+    width: 20%;
+        background-color: yellow;
         flex-wrap:nowrap;
         flex-direction: column;
-        background-color: red;
         border-top-right-radius: 0.5rem;
        
     }
@@ -205,4 +224,16 @@ button {
         margin:0px 0px 0px 300px;
         padding:0px;
     }
+
+
+
+
+    .table{
+         margin: 30% 0% 0% 20%; 
+         justify-content: space-between;
+         background-color: #ec5453;
+    }
+
+
+
     @import 'mobile';

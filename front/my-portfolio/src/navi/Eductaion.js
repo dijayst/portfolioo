@@ -1,12 +1,12 @@
 import React from 'react'
-import Works from './Works'
+
 const Eductaion = () => {
     return (
-        <div>
+        <div className="content">
             <div>
 ghh
             </div>
-            <Works/>
+            
         </div>
     )
 }

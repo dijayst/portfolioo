@@ -1,9 +1,9 @@
 import React from 'react'
-import {Link, useLocation} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 const Sidenav = () => {
-  const location=useLocation()
+  
     return (
         <div>
            <nav className="sidebar sidebar-offcanvas" id="sidebar">
@@ -65,7 +65,7 @@ const Sidenav = () => {
             <span className="nav-link">Navigation</span>
           </li>
           <li className="nav-item menu-items">
-            <Link to="/dashboard" className={location.pathname.includes('/dashboard')?'sidebar_active':''}>
+            <Link to="/dashboard" className='sidebar_active'>
               <span className="menu-icon">
                 <i className="mdi mdi-speedometer"></i>
               </span>

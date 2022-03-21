@@ -1,12 +1,11 @@
 import React from 'react'
-import Contact from './Contact'
 const Works = () => {
     return (
-        <div>
+        <div className="content">
             <div>
 
             </div>
-            <Contact/>
+            
         </div>
     )
 }

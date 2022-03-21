@@ -26,17 +26,17 @@ const [contactmelist, setcontactmelist] = useState([])
  <div className="col-lg-6 grid-margin stretch-card">
                 <div className="card">
                   <div className="card-body">
-                    <h4 className="card-title">Basic Table</h4>
-                    <p className="card-description"> Add className <code>.table</code>
-                    </p>
+                    <h4 className="card-title"> <b>Contactme Table </b></h4>
+                    
                     <div className="table-responsive">
                       <table className="table">
                         <thead>
                           <tr>
-                            <th>Profile</th>
-                            <th>VatNo.</th>
-                            <th>Created</th>
-                            <th>Status</th>
+                            <th>ID</th>
+                            <th>customers name</th>
+                            <th>email</th>
+                            <th>message</th>
+                        
                           </tr>
                         </thead>
                         <tbody>
@@ -46,6 +46,7 @@ const [contactmelist, setcontactmelist] = useState([])
                             <td>{item.id}</td>
                             <td>{item.Name}</td>
                             <td>{item.Email}</td>
+                            <td>{item.Message}</td>
                           </tr>
                           
                             )

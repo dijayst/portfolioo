@@ -3,6 +3,76 @@ import axios from 'axios';
 
 const Mystack = () => {
 
+
+  const [description, setdescription] = useState({
+    name:"",
+    Rangeinper:""
+    })
+    
+  console.log({description})
+  
+  const handleChange=(e)=>{
+    const newdescription={...description}
+    newdescription[e.target.id]=e.target.value
+    setdescription(newdescription)
+    console.log(newdescription)
+
+  console.log(description)
+    
+  }
+
+
+
+    const handledescripe =(e) => {
+      e.preventDefault()
+
+    console.log({description});
+    //console.log(e.target.value);
+    //console.log(e.target.files);
+   // console.log({description});
+        axios.post("http://localhost:5050/range",{
+          Rangeinper:description.Rangeinper,
+    name:description.name,
+    
+        }
+         /* {headers:{"content-Type":"multipart/form-data"},
+        
+         productimage:userinfo.file,
+          market:description.market,
+           price:description.price,
+           domesticshipping:description.DOMESTIC,
+           internationalshipping:description.INTERNATIONAL,
+           shipin:description.SHIPSIN,
+         category:description.category,
+          subcategory:description.subcategory,
+           productname:description.productname,
+          avaliability:description.avaliability,
+           size:description.size,
+           productdescription:description.productdescription
+       }*/
+          
+ 
+        )
+        .then(res=>{console.warn(res)
+     //   history("/product");
+       console.log(Response)
+       console.log("i gotten it")
+          console.log(Response.data)
+      console.log(Response.description)
+      console.log("i gotten it")
+  
+        })
+         .catch(error=>{
+       console.log(error)
+       console.log("i deny")
+     })
+    };
+
+
+
+
+
+
     
   const [userinfo, setuserinfo] = useState({
     file:[],
@@ -23,39 +93,16 @@ const Mystack = () => {
 
 
        
-
-       const [description, setdescription] = useState({
-        market:"",
-        productdescription:"",
-        Range:""
-        })
-        
-      console.log({description})
-      
-      const handleChange=(e)=>{
-        const newdescription={...description}
-        newdescription[e.target.id]=e.target.value
-        setdescription(newdescription)
-        console.log(newdescription)
-    
-      console.log(description)
-        
-      }
-    
-    
-    
         const handledescrip =(e) => {
           e.preventDefault()
     
     
           console.log({userinfo});
-        console.log({description});
+      
         //console.log(e.target.value);
       
         const formdata = new FormData();
         formdata.append('avatar',userinfo.file);
-        formdata.set("market", description.market)
-        formdata.set("Range", description.Range)
     
         //console.log(e.target.files);
        // console.log({description});
@@ -99,15 +146,9 @@ const Mystack = () => {
 
 <form onSubmit={handledescrip}>
 
-<label>PRICE (USD)</label> <input type="text" id="market"onChange={(e)=>{handleChange(e)}} value={description.market} placeholder="ENTER AMOUNT"/>
-<br/>
-
 <input type="file" name="upload_file" onChange={(e)=>{saveFile(e)}} />
               <br/>
               <br/>
- <input type="range" max="100" min="0" step="20"id="Range" value={description.Range} onChange={handleChange}/>
-
-              
                  {userinfo.filepreview !==null ?<img src={userinfo.filepreview} height="100px" width="100px" alt="uploadimage"/> :null}
        
                    
@@ -116,7 +157,17 @@ const Mystack = () => {
 <button type="submit">ADD</button>
             </form>
 
+<form onSubmit={handledescripe}>
 
+
+  
+<label>PRICE (USD)</label> <input type="text" id="name"onChange={(e)=>{handleChange(e)}} value={description.name} placeholder="ENTER AMOUNT"/>
+<br/>
+
+ <input type="range" max="100" min="0" step="20"id="Rangeinper" value={description.Rangeinper} onChange={handleChange}/>
+
+ <button type="submit">ADD range</button>
+</form>
         </div>
     )
 }
