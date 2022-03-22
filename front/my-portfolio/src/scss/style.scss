@@ -79,6 +79,7 @@ border: 4px solid plum;
                 z-index: 0;
                 width: 20%;
                 height: 100%;
+                overflow: scroll;
                 flex-wrap:nowrap;
                 flex-direction: column;
                 background-color: red;
@@ -204,9 +205,10 @@ color: $color;
 
     .sidebar{
         position: fixed;
-        height: 100%;
+        height: 110%;
         left: 0;
         z-index: 0;
+
     width: 20%;
         background-color: yellow;
         flex-wrap:nowrap;

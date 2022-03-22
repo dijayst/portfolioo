@@ -4,69 +4,40 @@ import axios from 'axios';
 const Mystack = () => {
 
 
-  const [description, setdescription] = useState({
+  const [Rangeinper, setRangeinper] = useState({
+    Rang:"",
     name:"",
-    Rangeinper:""
-    })
-    
-  console.log({description})
-  
-  const handleChange=(e)=>{
-    const newdescription={...description}
-    newdescription[e.target.id]=e.target.value
-    setdescription(newdescription)
-    console.log(newdescription)
 
-  console.log(description)
-    
-  }
+})
 
+const handlecost=(e)=>{
+   const newcost={...Rangeinper}
+   newcost[e.target.id]=e.target.value
+   setRangeinper(newcost)
+   console.log(newcost)
+ //  console.log(cost)
+   //setcost(e.target.value)
 
+}
+const handlesubmit=(e)=>{
+e.preventDefault()
+//console.log(cost)
+//  console.log(e.target.value)
 
-    const handledescripe =(e) => {
-      e.preventDefault()
-
-    console.log({description});
-    //console.log(e.target.value);
-    //console.log(e.target.files);
-   // console.log({description});
-        axios.post("http://localhost:5050/range",{
-          Rangeinper:description.Rangeinper,
-    name:description.name,
-    
-        }
-         /* {headers:{"content-Type":"multipart/form-data"},
-        
-         productimage:userinfo.file,
-          market:description.market,
-           price:description.price,
-           domesticshipping:description.DOMESTIC,
-           internationalshipping:description.INTERNATIONAL,
-           shipin:description.SHIPSIN,
-         category:description.category,
-          subcategory:description.subcategory,
-           productname:description.productname,
-          avaliability:description.avaliability,
-           size:description.size,
-           productdescription:description.productdescription
-       }*/
-          
- 
-        )
-        .then(res=>{console.warn(res)
-     //   history("/product");
-       console.log(Response)
-       console.log("i gotten it")
-          console.log(Response.data)
-      console.log(Response.description)
-      console.log("i gotten it")
-  
-        })
-         .catch(error=>{
-       console.log(error)
-       console.log("i deny")
-     })
-    };
+axios.post("http://localhost:5050/range",{
+Rang:Rangeinper.Rang,
+name:Rangeinper.name,
+})
+.then((Response)=>{
+// console.log(Response.data)
+console.log(Response.cost)
+console.log("i gotten it")
+})
+.catch(error=>{
+console.log(error)
+console.log("i deny")
+})
+}
 
 
 
@@ -157,17 +128,20 @@ const Mystack = () => {
 <button type="submit">ADD</button>
             </form>
 
-<form onSubmit={handledescripe}>
 
 
-  
-<label>PRICE (USD)</label> <input type="text" id="name"onChange={(e)=>{handleChange(e)}} value={description.name} placeholder="ENTER AMOUNT"/>
+            <form onSubmit={handlesubmit}>
+
+<input id="name"  onChange={(e)=>{handlecost(e)}} value={Rangeinper.name} />
 <br/>
+ 
+<input type="range" max="100" min="0" step="20"id="Rang" value={Rangeinper.Rang} onChange={handlecost}/>
+{Rangeinper.Rang}
+<button type="submit">ADD</button>
 
- <input type="range" max="100" min="0" step="20"id="Rangeinper" value={description.Rangeinper} onChange={handleChange}/>
 
- <button type="submit">ADD range</button>
-</form>
+            </form>
+
         </div>
     )
 }

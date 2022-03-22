@@ -218,14 +218,14 @@ app.get('/stack',(req,res)=>{
 
 app.post('/range',async (req,res)=>{
    
-    const Rangeinper=req.body.Rangeinper;
+    const Rang=req.body.Rang;
     const name=req.body.name
    
 console.log(req.body)
 //console.log(req.body.productdescription)
 console.log(req.body.data);
-const sqlInsert="INSERT INTO Range (Rangeinper,name)VALUES(?,?)"
-db.query(sqlInsert,[Rangeinper,name],(err,result)=>{
+const sqlInsert="INSERT INTO stackname (Rang,name)VALUES(?,?)"
+db.query(sqlInsert,[Rang,name],(err,result)=>{
 console.log(result)
 console.log(err)
 })
@@ -235,7 +235,7 @@ console.log(err)
 
 
 app.get('/range',(req,res)=>{
-    const sqlSelect="SELECT * FROM Range";
+    const sqlSelect="SELECT * FROM stackname";
     db.query(sqlSelect,(err,result)=>{
         console.log(result)
         res.send(result)      
@@ -313,6 +313,37 @@ app.get('/contactme',(req,res)=>{
         res.send(result)
     })
 })
+
+
+
+
+
+app.get('/rangee',(req,res)=>{
+    const sqlSelect="SELECT * From cost";
+    db.query(sqlSelect,(err,result)=>{
+        console.log(result)
+        res.send(result)
+    })
+})
+
+//post from signin
+
+app.post('/rangee',(req,res)=>{
+    const price=req.body.price
+    const domestic=req.body.DOMESTIC;
+  
+    const sqlInsert="INSERT INTO cost(price,domestic)VALUES(?,?)"
+    db.query(sqlInsert,[price,domestic],(err,result)=>{
+console.log(result)
+
+    })
+})
+
+
+
+
+
+
 
 //post from signin
 

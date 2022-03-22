@@ -24,6 +24,41 @@ console.log(range)
              })
             
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    const [rangee, setrangee] = useState([])
+   /* const changerange=(e)=>{
+setrange(e.target.value)
+console.log(range)
+    }*/
+    useEffect(()=>{
+        axios.get("http://localhost:5050/range")
+        .then((Response)=>{
+            setrangee(Response.data)
+            //setproductlist(Response.productimage)
+               console.log(Response.data)
+              // console.log(Response.productimage)
+               console.log("i gotten it")
+             })
+             .catch(error=>{
+               console.log(error)
+               console.log("i deny")
+             })
+            
+    })
     return (
         <div className="content">
         <div className="stack">
@@ -54,7 +89,19 @@ The Big Oxmox advised her not to do so, because there were thousands of bad Comm
 
 RANGE
         </div>
-        
+        <div>
+            
+{rangee.map((item)=>{
+    return(
+        <div key={item.id}>
+            
+<input type="range" max="100" min="0" step="20"id="Rang" value={item.Rang}/>{item.Rang}
+            <p>{item.name}</p>
+</div>
+    )
+})}
+
+        </div>
         </div>
     )
 }
