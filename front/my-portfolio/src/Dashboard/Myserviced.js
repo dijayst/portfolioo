@@ -26,7 +26,7 @@ const Myserviced = () => {
        const [description, setdescription] = useState({
         market:"",
         productdescription:"",
-        Range:""
+        
         })
         
       console.log({description})
@@ -102,15 +102,13 @@ const Myserviced = () => {
 <form onSubmit={handledescrip}>
 <label >PRUDUCT NAME :</label><input value={description.productdescription} onChange={(e)=>{handleChange(e)}} id="productdescription" type="text" placeholder="ENTER YOUR PRODUCT NAME" />
 <br/>
-   <label>PRICE (USD)</label> <input type="text" id="market"onChange={(e)=>{handleChange(e)}} value={description.market} placeholder="ENTER AMOUNT"/>
+   <label>PRICE (USD)</label> <textarea rows="7" cols="16"  id="market"onChange={(e)=>{handleChange(e)}} value={description.market}>abouyt it </textarea>
 <br/>
 
 <div>
 <input type="file" name="upload_file" onChange={(e)=>{saveFile(e)}} />
               <br/>
               <br/>
- <input type="range" max="100" min="0" step="20"id="Range" value={description.Range} onChange={handleChange}/>
-
               
                  {userinfo.filepreview !==null ?<img src={userinfo.filepreview} height="100px" width="100px" alt="uploadimage"/> :null}
        
@@ -124,3 +122,8 @@ const Myserviced = () => {
 }
 
 export default Myserviced
+
+
+
+/*Javascript development is used to transform an html page into an interactive and dynamic ecosystem.It gives a front-end devaloper a possibility to add functionality and interractive elements Like events that enables the buttons to click and  other function. 
+*/

@@ -21,21 +21,21 @@ console.log({click})
          <header className="header_section">
             <div className="nav-container">
                <nav className="navbar navbar-expand-lg custom_nav-container ">
-              <div>
-           <img src={nab}  className="imgea" alt="hrk" height="70px" width="70px"/>
-              </div>
-               <Link
-              to='/'
-              className='nav-links'
-            ><b>
+              <div className="divimg">
+           <img src={nab}  className="imgea1" alt="hrk" height="170px" width="170px"/>
+          <br/>
+           <b>
               OLUBIYI ESTHER</b> <i className='fas fa-caret-down' />
-            </Link>
+            
            
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span className={click ?'fas fa-times' : 'fas fa-bars'} onClick={handleClick}> helo</span>
                   </button>
+               
+          <p>frontend developer in Nigeria</p>
+              </div>
                   <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    
+                  <br/><br/>
                      <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className="nav-item active">
                         <Link  to="/"
@@ -50,7 +50,7 @@ console.log({click})
                        <li className="nav-item dropdown">
                        <Link
               to='/Aboutme'
-              className={window.location.pathname==="/Aboutme"? 'nav-links':""}
+              className='nav-links'
             >
               Aboutme <i className='fas fa-caret-down' />
             </Link>

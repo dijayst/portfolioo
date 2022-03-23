@@ -37,9 +37,9 @@ const Home = () => {
 <div className="gitimage">
    
  <img src={nab}  className="imge" alt="hrk" height="70px" width="70px"/>
-<h4>WANTS TO CHECK SOME AWESOME PROJECT I'M wORKING ON? FEEL FREE</h4>
+<h4>Hi! I'm Esther.I am a frontend developer</h4>
 <button>
-<a rel="noopener noreferrer" href="https://github.com/dijayst" target="_blank">SEE ME ON GITHUB</a></button>
+<a  href="https://github.com/dijayst" >SEE ME ON GITHUB</a></button>
 </div>
 <br/><br/>
 

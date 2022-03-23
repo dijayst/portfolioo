@@ -153,15 +153,14 @@ app.post('/api/insert',upload.single('avatar'),async (req,res)=>{
    
     const  productdescription=req.body.productdescription;
     const market=req.body.market;
-    const Range=req.body.Range
     const productimage=req.file.path;
 
  
 console.log(req.body)
 //console.log(req.body.productdescription)
 console.log(req.body.data);
-const sqlInsert="INSERT INTO service (productimage,Range,productdescription,market)VALUES(?,?,?,?)"
-db.query(sqlInsert,[productdescription,Range,market,productimage],(err,result)=>{
+const sqlInsert="INSERT INTO service (productimage,productdescription,market)VALUES(?,?,?)"
+db.query(sqlInsert,[productdescription,market,productimage],(err,result)=>{
 console.log(result)
 console.log(err)
 })

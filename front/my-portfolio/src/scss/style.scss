@@ -12,13 +12,6 @@
     background-color:$backgroundcolor;
     color: $color;
 }
-.imgea{
-    border-radius: 35px;
-}
-b{
-    font-size: 150%;
-    color: $color;
-}
 .contact{
     border-top:4px;
     height: 23px;
@@ -33,9 +26,9 @@ b{
 
 .carousel-items{
     float: left;
-    background-color: rgb(45, 119, 51);
+    background-color: "";
 margin: -20% 50% 0% 0%;
-border: 4px solid plum;
+border: 4px ;
 }
 
 
@@ -68,11 +61,23 @@ border: 4px solid plum;
 
 
 
+    .sidebar{
+        position: fixed;
+        height: 110%;
+        left: 0;
+        z-index: 0;
 
+    width: 20%;
+        background-color: $backgroundcolor;
+        flex-wrap:nowrap;
+        flex-direction: column;
+        border-top-right-radius: 0.5rem;
+       
     .header_section{
         
 
             .navbar{
+                text-align: center;
                 position: fixed;
                 top: 5px;
                 left: 0;
@@ -82,14 +87,29 @@ border: 4px solid plum;
                 overflow: scroll;
                 flex-wrap:nowrap;
                 flex-direction: column;
-                background-color: red;
+                background-color:$backgroundcolor;
                 border-top-right-radius: 0.5rem;
+                
+                .divimg{
+                    
+b{
+    font-size: 150%;
+    color: $color;
+}
+                    .imgea1{top: -50px;
+                    border-radius: 80px;
+                    }
+                }
+                
                 .nav-links{
                     text-decoration: none;
+                    color: $color;
+                    top: 500px;
                     
                 }
                 .nav-links:hover{
-                                 color: #ec5453; 
+                                 color:$text; 
+                                 text-decoration: underline;
                                  background-color: inherit;
                                  
   
@@ -102,16 +122,11 @@ border: 4px solid plum;
 .nav-item{
 
         
-
-        
 }
             }
         
-    }
+    }}
 
-
-
-    
 
 
     
@@ -125,6 +140,7 @@ padding:0px;
    height: 5%;
    font-size: 40px;
    margin:0px 0px 700px 0px;
+   
   .imge{
     display: block; /* remove extra space below image */
 width: 100%;
@@ -139,6 +155,12 @@ h4 {
 button {
     margin: -200px 0px 0px 0px;
     z-index: 0;
+    text-decoration: none;
+    height: 30px;
+    width: 150px;
+    a{
+        text-decoration: none;
+    }
 }
 }
 
@@ -163,7 +185,6 @@ button {
 .tile{
 
 text-align: center;
-background-color:green;
 border-radius: 0.3rem;
 color: $color;
 
@@ -190,7 +211,7 @@ color: $color;
     
     margin: 1% 0% 0% 22%;
     height: 100%;
-    background-color: yellow;
+    background-color: $backgroundcolor;
     
 }
 
@@ -202,20 +223,6 @@ color: $color;
 
 
     
-
-    .sidebar{
-        position: fixed;
-        height: 110%;
-        left: 0;
-        z-index: 0;
-
-    width: 20%;
-        background-color: yellow;
-        flex-wrap:nowrap;
-        flex-direction: column;
-        border-top-right-radius: 0.5rem;
-       
-    }
 
 
 

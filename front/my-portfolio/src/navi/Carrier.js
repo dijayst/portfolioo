@@ -18,15 +18,19 @@ import Myserviced from '../Dashboard/Myserviced';
 import Mystack from '../Dashboard/Mystack';
 import Eductaion from './Eductaion';
 import Addedservice from '../Dashboard/Addedservice';
+import Error from './Error';
 //import Redirect from './Redirect'
 const Carrier = () => {
     return (
-        <div>
+        <div >
         
              <BrowserRouter>
                 
             <Navbar/>
                 <Routes>  
+                    
+                <Route path='*' element={<Error/>}/>
+                   
                     <Route path='/' element={<Home/>}/>
                     <Route path='/' element={<Navbar/>}/>
                     

@@ -45,7 +45,6 @@ return(
 
    <div key={item.id} className="tile">
  <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
- <span>Customer</span>
  <h4>{item.productimage}</h4>
  <p>{item.productdescription}</p>
 
