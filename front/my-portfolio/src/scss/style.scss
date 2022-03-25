@@ -63,7 +63,7 @@ border: 4px ;
 
     .sidebar{
         position: fixed;
-        height: 110%;
+        height: 100%;
         left: 0;
         z-index: 0;
 
@@ -96,6 +96,7 @@ b{
     font-size: 150%;
     color: $color;
 }
+
                     .imgea1{top: -50px;
                     border-radius: 80px;
                     }
@@ -243,6 +244,9 @@ color: $color;
          background-color: #ec5453;
     }
 
-
+    .content1{
+        background-color: $backgroundcolor;
+    margin: 1% 0% 0% -25%;
+    }
 
     @import 'mobile';

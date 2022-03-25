@@ -69,7 +69,7 @@ console.log(range)
 {range.map((item)=>{
     return(
         <div key={item.id}>
-            <p>{item.market}</p>
+            
             <img src={item.productimage} alt={item.productimage} height="170px" width="170px"/>
 </div>
     )

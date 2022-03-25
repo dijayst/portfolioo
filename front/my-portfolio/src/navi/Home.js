@@ -1,7 +1,18 @@
 import React from 'react'
 import nab from './nab.jpg';
+import Aboutus from './Aboutus';
 
-//import Aboutus from './Aboutus';
+import Myservice from './Myservice';
+
+import Myskill from './Myskill';
+
+import Blog from './Blog';
+
+import Works from './Works';
+
+import Contact from './Contact';
+
+import Eductaion from './Eductaion';
 
 
 /*
@@ -32,7 +43,7 @@ const Home = () => {
     return (
         <div className="content" >
             
-<div className="container">
+<section className="container">
 
 <div className="gitimage">
    
@@ -41,9 +52,14 @@ const Home = () => {
 <button>
 <a  href="https://github.com/dijayst" >SEE ME ON GITHUB</a></button>
 </div>
-<br/><br/>
-
-</div>
+</section>
+<section className="content1"><Aboutus/></section>
+<section className="content1"><Myservice/></section>
+<section className="content1"><Myskill/></section>
+<section className="content1"><Eductaion/></section>
+<section className="content1"><Works/></section>
+<section className="content1"><Blog/></section>
+<section className="content1"><Contact/></section>
         </div>
         
     )
