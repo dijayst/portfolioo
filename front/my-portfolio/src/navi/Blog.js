@@ -2,7 +2,7 @@ import React from 'react'
 
 const Blog = () => {
     return (
-        <div className="content">
+        <div className="content" id="Blog">
             jhjhjhj
         </div>
     )

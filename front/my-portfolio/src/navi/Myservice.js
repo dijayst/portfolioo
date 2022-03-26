@@ -32,7 +32,7 @@ textAlign:"center"
  }
     return (
         
-            <div className="content"><div></div>
+            <div id="myservice" className="content"><div></div>
                 <p style={style.para}><b>
       MY SERVICES</b>
    </p>

@@ -60,7 +60,7 @@ console.log(range)
             
     })
     return (
-        <div className="content">
+        <div id="skill" className="content">
         <div className="stack">
            
 

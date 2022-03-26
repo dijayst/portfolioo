@@ -25,8 +25,7 @@ const Projectdone = () => {
        const [description, setdescription] = useState({
         about:"",
         Projecttitle:"",
-        
-    
+        link:"",
         })
         
       console.log({description})
@@ -53,7 +52,9 @@ const Projectdone = () => {
       
         const formdata = new FormData();
         formdata.append('avatar',userinfo.file);
-        formdata.set("about", description.about)
+        formdata.set("about", description.about);
+        formdata.set("Projecttitle",description.Projecttitle);
+        formdata.set("link",description.link);
         
     
         //console.log(e.target.files);
@@ -98,10 +99,13 @@ const Projectdone = () => {
 <form onSubmit={handledescrip}>
 <label >Projecttitle :</label><input value={description.Projecttitle} onChange={(e)=>{handleChange(e)}} id="Projecttitle" type="text" placeholder="ENTER YOUR PROJECT DESCRIPTION" />
 <br/>
-   <label>Aboutproject</label>  <textarea rows="5"  cols="29" value={description.about} id="about" onChange={(e)=>{handleChange(e)}} >ABOUT</textarea><br/><br/>
-           
+<br/>
+   <label>Aboutproject:</label>  <textarea rows="7" cols="16"  id="about" onChange={(e)=>{handleChange(e)}} value={description.about}> abouyt it </textarea>
 <br/>
 
+   <label>projectlink:</label>  <input value={description.link} onChange={(e)=>{handleChange(e)}} id="link" type="text" placeholder="ENTER YOUR PROJECT Link" /><br/><br/>
+           
+<br/>
 <div>
 <input type="file" name="upload_file" onChange={(e)=>{saveFile(e)}} />
               

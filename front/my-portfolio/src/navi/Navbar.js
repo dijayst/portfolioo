@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
+import{HashLink as Link} from 'react-router-hash-link';
 
 import nab from './nab.jpg';
 
@@ -38,7 +39,7 @@ console.log({click})
                   <br/><br/>
                      <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className="nav-item active">
-                        <Link  to="/"
+                        <Link smooth to="#"
               className='nav-links'
               
             >
@@ -48,8 +49,8 @@ console.log({click})
                         </li>
                         <br/>
                        <li className="nav-item dropdown">
-                       <Link
-              to='/Aboutme'
+                       <Link smooth
+              to='#Aboutme'
               className='nav-links'
             >
               Aboutme <i className='fas fa-caret-down' />
@@ -58,8 +59,8 @@ console.log({click})
                         </li>
                         <br/>
                         <li className="nav-item dropdown">
-                        <Link
-              to='/myservice'
+                        <Link smooth
+              to='#myservice'
               className='nav-links'
               
             >
@@ -68,8 +69,8 @@ console.log({click})
                         </li>
                         <br/>
                         <li className="nav-item dropdown">
-                        <Link
-              to='/skill'
+                        <Link smooth
+              to='#skill'
               className='nav-links'
               
             >
@@ -78,8 +79,8 @@ console.log({click})
                                  <br/>
                                  
                                  <li className="nav-item dropdown">
-                                 <Link
-              to='/education'
+                                 <Link smooth
+              to='#education'
               className='nav-links'
               
             >
@@ -87,8 +88,8 @@ console.log({click})
                                  </li>
                                  <br/>
                                  <li className="nav-item dropdown">
-                                 <Link
-              to='/work'
+                                 <Link smooth
+              to='#work'
               className='nav-links'
               
             >
@@ -96,8 +97,8 @@ console.log({click})
                                  </li>
                                  <br/>
                         <li className="nav-item">
-                        <Link
-              to='/Blog'
+                        <Link smooth
+              to='#Blog'
               className='nav-links'
               
             >
@@ -107,15 +108,15 @@ console.log({click})
                         </li>
                         <br/>
                         <li className="nav-item">
-                        <Link
-              to='/Contact'
+                        <Link smooth
+              to='#Contact'
               className='nav-links'
             >
               Contact <i className='fas fa-caret-down' />
             </Link>
                         </li><br/>
                         <li className="nav-item">
-                        <Link
+                        <Link smooth
               to='/dashboard'
               className='nav-links'
             >
@@ -134,7 +135,6 @@ console.log({click})
             </div>
          </header>
         </div>
-        
         
         </div>
     )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Contact from './Contact';
 import Home from './Home';
 import Blog from './Blog';
@@ -19,27 +19,48 @@ import Mystack from '../Dashboard/Mystack';
 import Eductaion from './Eductaion';
 import Addedservice from '../Dashboard/Addedservice';
 import Error from './Error';
-//import Redirect from './Redirect'
+import Protectedroute from './Protectedroute';
+import Login from './Login';
+import Signup from './Signup';
+
 const Carrier = () => {
+
+    const [user, setUser] = useState(null);
+
+    const handleLogin = () => setUser({ id: '1', name: 'robin', permissions: ['analyze'],
+    roles: ['admin'] });
+    const handleLogout = () => setUser(null);
+  
     return (
         <div >
         
              <BrowserRouter>
-                
             <Navbar/>
+            {user ? (
+        <button onClick={handleLogout}>Sign Out</button>
+      ) : (
+        <button onClick={handleLogin}>Sign In</button>
+      )}
+
                 <Routes>  
                     
                 <Route path='*' element={<Error/>}/>
                    
+                
                     <Route path='/' element={<Home/>}/>
-                    <Route path='/' element={<Navbar/>}/>
+                  
                     
                     <Route path='/stack' element={<Mystack/>}/>
-
+                     <Route path="/Signup" element={<Signup/>}/>
+                     <Route path="/Login" element={<Login/>}/>
                     <Route path='/education' element={<Eductaion/>}/>
 
                     <Route path='/sidenav' element={<Sidenav/>}/>
-                    <Route path='/dashboard' element={<Homee/>}/>
+                    <Route path='/dashboard' element={
+                    <Protectedroute  redirectPath="/Signup" isAllowed={!!user && user.roles.includes('dashboard')}>
+                    <Homee />
+                  </Protectedroute>
+                    }/>
                     <Route path='/myserviced' element={<Myserviced/>}/>
                     <Route path='/addedservice' element={<Addedservice/>}/>
                     

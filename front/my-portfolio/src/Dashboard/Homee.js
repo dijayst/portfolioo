@@ -4,7 +4,10 @@ import React from 'react'
 
 
 
-const Homee = () => {
+const Homee = ({user}) => {
+  if (!user) {
+    return <Navigate to="/" replace />;
+  }
 
     return (
         <div className="servicecontainer">
