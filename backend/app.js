@@ -257,7 +257,7 @@ app.get('/project',(req,res)=>{
 
 app.post('/project',upload.single('avatar'),async (req,res)=>{
    
-    const  Projecttitle=req.body.Projecttitle;
+    const  projecttitle=req.body.projecttitle;
     const about=req.body.about;
     const productimage=req.file.path;
     const link=req.body.link;
@@ -267,13 +267,13 @@ console.log(req.body)
 //console.log(req.body.productdescription)
 console.log(req.body.data);
 
-const sqlInsert="INSERT INTO project (Projecttitle,about,productimage,link)VALUES(?,?,?,?)"
-db.query(sqlInsert,[Projecttitle,about,productimage,link],(err,result)=>{
+const sqlInsert="INSERT INTO project (projecttitle,about,productimage,link)VALUES(?,?,?,?)"
+db.query(sqlInsert,[projecttitle,about,productimage,link],(err,result)=>{
 console.log(result)
 console.log(err)
 })
 console.log(req.body.link)
-console.log(req.body.Projecttitle)
+console.log(req.body.projecttitle)
 console.log(req.body.about)
 console.log(req.files)
 console.log(req.avatar)

@@ -30,9 +30,10 @@ const Works = () => {
             {project.map((item)=>{
              return(
                  <div key={item}>
-                 <h4>{item.Projecttitle}:</h4>
+                 <h4>{item.projecttitle}:</h4>
                  <p>{item.about}</p>
                  <a href={item.link}><img src={item.productimage} alt="helo"/></a>
+                 <hr/>
                  </div>
              )
             })}

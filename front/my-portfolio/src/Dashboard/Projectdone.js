@@ -12,7 +12,6 @@ const Projectdone = () => {
 
   const saveFile = (e) => {
    
-
     setuserinfo({...userinfo,file:e.target.files[0],
     filepreview:URL.createObjectURL(e.target.files[0]),
     });
@@ -21,10 +20,9 @@ const Projectdone = () => {
 
 
 
-
        const [description, setdescription] = useState({
         about:"",
-        Projecttitle:"",
+        projecttitle:"",
         link:"",
         })
         
@@ -53,7 +51,7 @@ const Projectdone = () => {
         const formdata = new FormData();
         formdata.append('avatar',userinfo.file);
         formdata.set("about", description.about);
-        formdata.set("Projecttitle",description.Projecttitle);
+        formdata.set("projecttitle",description.projecttitle);
         formdata.set("link",description.link);
         
     
@@ -97,7 +95,7 @@ const Projectdone = () => {
        return (
         <div className="servicecontainer">
 <form onSubmit={handledescrip}>
-<label >Projecttitle :</label><input value={description.Projecttitle} onChange={(e)=>{handleChange(e)}} id="Projecttitle" type="text" placeholder="ENTER YOUR PROJECT DESCRIPTION" />
+<label >Projecttitle :</label><input value={description.projecttitle} onChange={(e)=>{handleChange(e)}} id="projecttitle" type="text" placeholder="ENTER YOUR PROJECT DESCRIPTION" />
 <br/>
 <br/>
    <label>Aboutproject:</label>  <textarea rows="7" cols="16"  id="about" onChange={(e)=>{handleChange(e)}} value={description.about}> abouyt it </textarea>
