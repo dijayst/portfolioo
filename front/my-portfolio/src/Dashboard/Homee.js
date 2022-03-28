@@ -1,16 +1,15 @@
 import React from 'react'
+import Sidenav from './Sidenav'
 //import './Dash.css'
 
 
 
 
 const Homee = ({user}) => {
-  if (!user) {
-    return <Navigate to="/" replace />;
-  }
-
+ 
     return (
         <div className="servicecontainer">
+          <Sidenav/>
              <div className="row">
               <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <div className="card">
@@ -238,7 +237,6 @@ const Homee = ({user}) => {
               </div>
             </div>
           
-
         </div>
     )
 }

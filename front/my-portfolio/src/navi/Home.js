@@ -13,6 +13,7 @@ import Works from './Works';
 import Contact from './Contact';
 
 import Eductaion from './Eductaion';
+import Navbar from './Navbar';
 
 
 /*
@@ -42,7 +43,7 @@ const Home = () => {
 
     return (
         <div id="#"className="content" >
-            
+            <Navbar/>
 <section className="container">
 
 <div className="gitimage">
