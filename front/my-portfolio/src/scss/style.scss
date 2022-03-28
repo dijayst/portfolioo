@@ -68,7 +68,7 @@ border: 4px ;
         z-index: 0;
 
     width: 20%;
-        background-color: $backgroundcolor;
+        background-color: red;
         flex-wrap:nowrap;
         flex-direction: column;
         border-top-right-radius: 0.5rem;
@@ -233,6 +233,7 @@ color: $color;
         background-color: gold;
         margin:0px 0px 0px 300px;
         padding:0px;
+        width: 80%;
     }
 
 

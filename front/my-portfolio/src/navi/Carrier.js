@@ -15,6 +15,8 @@ import Error from './Error';
 
 import Login from './Login';
 import Signup from './Signup';
+import { AuthProvider } from './Auth';
+
 
 const Carrier = () => {
 
@@ -23,34 +25,25 @@ const Carrier = () => {
         
              <BrowserRouter>
             
-
+<AuthProvider>
                 <Routes>  
                     
-                <Route path='*' element={<Error/>}/>
-                   
-                
+                <Route path='/:pageName' element={<Error/>}/>
                     <Route path='/' element={<Home/>}/>
-                  
-                    
                     <Route path='/stack' element={<Mystack/>}/>
                      <Route path="/Signup" element={<Signup/>}/>
                      <Route path="/Login" element={<Login/>}/>
-                    
-
                     <Route path='/sidenav' element={<Sidenav/>}/>
                     <Route path='/dashboard' element={<Homee/>}/>
                     <Route path='/myserviced' element={<Myserviced/>}/>
                     <Route path='/addedservice' element={<Addedservice/>}/>
-                    
-                
-
                     <Route path='/contactme' element={<Contactme/>}/>
                     <Route path='/customers review' element={<Customersreview/>}/> 
 <Route path="/sidenav" element={<Sidenav/>}/>
 <Route path="/project" element={<Projectdone/>}/>
 
           </Routes>
-          
+          </AuthProvider>
     
           </BrowserRouter>
         </div>

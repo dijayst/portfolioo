@@ -60,6 +60,8 @@ app.get('/api/get/:id',(req,res)=>{
 })
 
 
+
+
 //post to seller table
 /*
 app.post('/api/insert',upload.single('avatar'),async (req,res)=>{
@@ -176,6 +178,59 @@ console.log(req.avatar)
 
 
 
+
+//post from signin
+
+app.get('/signup',(req,res)=>{
+    const sqlSelect="SELECT * FROM Admin";
+    db.query(sqlSelect,(err,result)=>{
+        console.log(result)
+        res.send(result)      
+  })
+})
+
+
+
+app.post('/signup',(req,res)=>{
+    const fullname=req.body.fullname;
+    const email=req.body.email;
+    const password=req.body.password;
+  
+console.log(req.body)
+//console.log(req.body.productdescription)
+console.log(req.body.data);
+
+    const sqlInsert="INSERT INTO Admin (fullname,email,password)VALUES(?,?,?)"
+    db.query(sqlInsert,[fullname,email,password],(err,result)=>{
+console.log(result)
+console.log(err)
+    })
+    
+console.log(req.body.fullname)
+console.log(req.body.email)
+console.log(req.body.password)
+
+})
+//post login
+
+app.post('/login',(req,res)=>{
+    const email=req.body.email
+    const password=req.body.password
+  
+   
+    db.query("SELECT* FROM Admin WHERE email=? AND password=?",[email,password],(err,result)=>{
+console.log(result)
+if(err){
+    res.send({err:err})
+}
+if(result.lenght>0){
+    res.send(result);
+}else{
+    res.send({message:"wrong data"})
+    //make the entry data same *
+}
+    })
+})
 
 
 
