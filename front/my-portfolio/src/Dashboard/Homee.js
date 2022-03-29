@@ -1,21 +1,12 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../navi/Auth'
 import Sidenav from './Sidenav'
 //import './Dash.css'
 
 
 
 
-const Homee = ({user}) => {
+const Homee = () => {
  
-
-  const auth =useAuth()
-const navigate=useNavigate()
-  const handleLogout=()=>{
-    auth.logout()
-    navigate("/")
-  }
     return (
         <div className="servicecontainer">
           <Sidenav/>
@@ -48,7 +39,7 @@ const navigate=useNavigate()
                     <div className="row">
                       <div className="col-9">
                         <div className="d-flex align-items-center align-self-start">
-                          <h3 className="mb-0"> {auth.user}$17.34 </h3>
+                          <h3 className="mb-0"> $17.34 </h3>
                           <p className="text-success ml-2 mb-0 font-weight-medium">+11%</p>
                         </div>
                       </div>
@@ -105,7 +96,7 @@ const navigate=useNavigate()
             </div>
            
 
-<button onClick={handleLogout}>logout</button>
+
 
   <div className="roww ">
               <div className="col-12 grid-margin">

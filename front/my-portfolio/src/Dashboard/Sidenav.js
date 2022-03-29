@@ -1,9 +1,20 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import useAuth from "../navi/useAuth";
 
 
 const Sidenav = () => {
   
+
+  const { authed, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
     return (
         <div>
            <nav className="sidebar sidebar-offcanvas" id="sidebar">
@@ -21,7 +32,8 @@ const Sidenav = () => {
                 </div>
                 <div className="profile-name">
                   <h5 className="mb-0 font-weight-normal">Henry Klein</h5>
-                  <span>Gold Member</span>
+                  <span>Gold Member  </span>
+                  <button >logout</button>
                 </div>
               </div>
               <a href="/" id="profile-dropdown" data-toggle="dropdown"><i className="mdi mdi-dots-vertical"></i></a>
@@ -113,7 +125,8 @@ const Sidenav = () => {
               <i className="menu-arrow"></i>
             </Link>
             </li>
-        </ul>
+             </ul>
+            {authed && <button onClick={handleLogout}>Logout</button>}
       </nav>
 
        

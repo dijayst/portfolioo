@@ -1,15 +1,11 @@
 import React,{useState} from 'react'
-import { NavLink } from 'react-router-dom';
 //import { Link } from 'react-router-dom'
 import{HashLink as Link} from 'react-router-hash-link';
-import { useAuth } from './Auth';
-
 import nab from './nab.jpg';
 
 
 const Navbar = () => {
    
-  const Auth=useAuth()
 const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -134,11 +130,8 @@ console.log({click})
                      </ul>
                      
                   </div>
-                  {
-                    !Auth.user && (
-                      <NavLink to="/Login">Login</NavLink>
-                    )
-                  }
+                  
+          
                </nav>
             </div>
          </header>

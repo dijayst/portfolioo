@@ -1,15 +1,23 @@
 import React,{useState} from 'react'
 import axios from 'axios'
-import { useAuth } from './Auth'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import useAuth from "./useAuth";
+import { useLocation } from "react-router-dom";
+
+
 
 const Login = () => {
+    const navigate = useNavigate();
+    const { login } = useAuth();
+
+  const { state } = useLocation();
+  
     const [user, setuser] = useState({
         email:"",
         password:""
     })
-    const Auth=useAuth()
-const navigate=useNavigate()
+    
+
 
 
     const handlechange=(e)=>{
@@ -21,8 +29,10 @@ const navigate=useNavigate()
 const handlesummit=(e)=>{
 
     e.preventDefault()
-Auth.login(user)
-navigate("/")
+
+    login().then(() => {
+        navigate(state?.path || "/dashboard");
+      });
   console.log({user});
   
   const formdata = new FormData();

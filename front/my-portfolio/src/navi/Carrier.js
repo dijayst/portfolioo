@@ -12,10 +12,11 @@ import Myserviced from '../Dashboard/Myserviced';
 import Mystack from '../Dashboard/Mystack';
 import Addedservice from '../Dashboard/Addedservice';
 import Error from './Error';
-
 import Login from './Login';
 import Signup from './Signup';
-import { AuthProvider } from './Auth';
+import RequireAuth from './RequireAuth'
+
+
 
 
 const Carrier = () => {
@@ -25,7 +26,7 @@ const Carrier = () => {
         
              <BrowserRouter>
             
-<AuthProvider>
+
                 <Routes>  
                     
                 <Route path='/:pageName' element={<Error/>}/>
@@ -34,16 +35,16 @@ const Carrier = () => {
                      <Route path="/Signup" element={<Signup/>}/>
                      <Route path="/Login" element={<Login/>}/>
                     <Route path='/sidenav' element={<Sidenav/>}/>
-                    <Route path='/dashboard' element={<Homee/>}/>
+                   
+                    <Route path='/dashboard' element={<RequireAuth><Homee/></RequireAuth>  }/>
                     <Route path='/myserviced' element={<Myserviced/>}/>
                     <Route path='/addedservice' element={<Addedservice/>}/>
                     <Route path='/contactme' element={<Contactme/>}/>
                     <Route path='/customers review' element={<Customersreview/>}/> 
-<Route path="/sidenav" element={<Sidenav/>}/>
-<Route path="/project" element={<Projectdone/>}/>
+                    <Route path="/sidenav" element={<Sidenav/>}/>
+                    <Route path="/project" element={<Projectdone/>}/>
 
           </Routes>
-          </AuthProvider>
     
           </BrowserRouter>
         </div>
