@@ -12,9 +12,10 @@ const Myservice = () => {
      axios.get("http://localhost:5050/file")
      .then((Response)=>{
     setwhatido(Response.data)
-    //setproductlist(Response.productimage)
+    setproductlist(Response.productimage)
        console.log(Response.data)
-      // console.log(Response.productimage)
+      
+      console.log(Response.productimage)
        console.log("i gotten it")
      })
      .catch(error=>{
