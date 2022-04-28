@@ -1,18 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { useNavigate } from "react-router-dom";
-import useAuth from "../navi/useAuth";
 
 
 const Sidenav = () => {
   
 
-  const { authed, logout } = useAuth();
-  const navigate = useNavigate();
-
   const handleLogout = () => {
-    logout();
-    navigate("/");
+  
+  
   };
 
     return (
@@ -126,7 +121,7 @@ const Sidenav = () => {
             </Link>
             </li>
              </ul>
-            {authed && <button onClick={handleLogout}>Logout</button>}
+            <button onClick={handleLogout}>Logout</button>
       </nav>
 
        

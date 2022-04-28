@@ -14,9 +14,7 @@ import Addedservice from '../Dashboard/Addedservice';
 import Error from './Error';
 import Login from './Login';
 import Signup from './Signup';
-import RequireAuth from './RequireAuth'
-
-
+import Protectedroutes from './Protectedroutes'
 
 
 const Carrier = () => {
@@ -35,9 +33,10 @@ const Carrier = () => {
                      <Route path="/Signup" element={<Signup/>}/>
                      <Route path="/Login" element={<Login/>}/>
                     <Route path='/sidenav' element={<Sidenav/>}/>
-                   
-                    <Route path='/dashboard' element={<RequireAuth><Homee/></RequireAuth>  }/>
-                    <Route path='/myserviced' element={<Myserviced/>}/>
+                    <Route element={<Protectedroutes />}>
+                   <Route path='/dashboard' element={<Homee/> }/>
+                        </Route>                 
+   <Route path='/myserviced' element={<Myserviced/>}/>
                     <Route path='/addedservice' element={<Addedservice/>}/>
                     <Route path='/contactme' element={<Contactme/>}/>
                     <Route path='/customers review' element={<Customersreview/>}/> 

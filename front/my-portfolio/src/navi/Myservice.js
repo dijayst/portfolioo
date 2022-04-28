@@ -32,12 +32,11 @@ textAlign:"center"
  }
     return (
         
-            <div id="myservice" className="content"><div></div>
+            <div id="myservice" className="content2"><div></div>
                 <p style={style.para}><b>
       MY SERVICES</b>
    </p>
 <div className="tile-row">
-  
 {
    whatido.map((item)=>{
 return(

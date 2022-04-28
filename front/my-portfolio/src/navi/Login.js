@@ -1,24 +1,14 @@
 import React,{useState} from 'react'
 import axios from 'axios'
-import { useNavigate } from "react-router-dom";
-import useAuth from "./useAuth";
-import { useLocation } from "react-router-dom";
-
-
 
 const Login = () => {
-    const navigate = useNavigate();
-    const { login } = useAuth();
 
-  const { state } = useLocation();
-  
-    const [user, setuser] = useState({
+    
+ const [user, setuser] = useState({
         email:"",
         password:""
     })
     
-
-
 
     const handlechange=(e)=>{
         const newcost={...user}
@@ -26,15 +16,10 @@ const Login = () => {
        setuser(newcost)
        console.log(newcost)
     }
-const handlesummit=(e)=>{
-
-    e.preventDefault()
-
-    login().then(() => {
-        navigate(state?.path || "/dashboard");
-      });
-  console.log({user});
+      console.log({user});
   
+  const handlesummit=()=>{
+
   const formdata = new FormData();
   formdata.set("email", user.email)
   formdata.set("password", user.password)
@@ -53,16 +38,15 @@ const handlesummit=(e)=>{
     })
      .catch(error=>{
    console.log(error)
-   console.log("i deny")
- })
+   console.log("i deny")}
+ 
+ )
 };
-
-
-
+  
 
     return (
         <div>
-            <form onSubmit={handlesummit}>
+             <form onSubmit={handlesummit}>
                 <input type="text" id="email" value={user.email} onChange={handlechange} />
                 <br/>
                 <input type="password" id="password" value={user.password} onChange={handlechange} />
