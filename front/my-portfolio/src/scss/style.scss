@@ -44,22 +44,34 @@ border: 4px ;
     
     .carousel-item1{
         background-color: rgb(150, 182, 8);
-        margin: -10% 70% 0% 2%;
+        margin: -10% 60% 0% 24%;
     
     
     }
     .card-body{
-        background-color: rgb(35, 141, 100);
-        margin:-6.5% 10% -5% 65%;
+        background-color: rgb(35, 141, 40);
+        margin:0% 19% 25% 63%;
     }
     .carousel-itemm22{
         background-color: rgb(35, 61, 141);
-    margin:-6.5% 40% -5% 35%;
+    margin:-4.5% 40% -5% 43%;
     }
     
 
 
 
+    .sidebar11{
+        position: fixed;
+        height: 100%;
+        left: 0;
+        z-index: 0;
+        margin:150px 0px 0px 2px;
+    width: 20%;
+        background-color: rgb(161, 98, 25);
+        flex-wrap:nowrap;
+        flex-direction: column;
+        
+    }
 
     .sidebar{
         position: fixed;
@@ -240,9 +252,9 @@ color: $color;
 
 
     .table{
-         margin: 30% 0% 0% 20%; 
+         margin: -70% 0% 0% 20%; 
          justify-content: space-between;
-         background-color: #ec5453;
+         background-color: #ad0d0d;
     }
 
     .content1{

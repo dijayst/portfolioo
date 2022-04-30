@@ -1,7 +1,6 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Home from './Home';
-
-import {BrowserRouter, Route ,Routes } from 'react-router-dom';
+import {BrowserRouter, Route ,Routes,Navigate } from 'react-router-dom';
 //import Footer from './Footer';
 import Contactme from '../Dashboard/Contactme';
 import Homee from '../Dashboard/Homee';
@@ -14,11 +13,12 @@ import Addedservice from '../Dashboard/Addedservice';
 import Error from './Error';
 import Login from './Login';
 import Signup from './Signup';
-import Protectedroutes from './Protectedroutes'
+import Auth from './Auth';
+
 
 
 const Carrier = () => {
-
+const [user, setuser] = useState(null)
     return (
         <div >
         
@@ -26,23 +26,30 @@ const Carrier = () => {
             
 
                 <Routes>  
-                    
+                    {!user && (
+                <Route path='/auth' element={<Auth authenticate={()=>{setuser(true)}}/>}/>)}
                 <Route path='/:pageName' element={<Error/>}/>
-                    <Route path='/' element={<Home/>}/>
+
                     <Route path='/stack' element={<Mystack/>}/>
                      <Route path="/Signup" element={<Signup/>}/>
-                     <Route path="/Login" element={<Login/>}/>
-                    <Route path='/sidenav' element={<Sidenav/>}/>
-                    <Route element={<Protectedroutes />}>
+                     {user &&(
+                         <>
+                     <Route path="/Login" element={<Login xignup={()=>{setuser(false)}}/>}/>
                    <Route path='/dashboard' element={<Homee/> }/>
-                        </Route>                 
-   <Route path='/myserviced' element={<Myserviced/>}/>
+                   
+                   <Route path='/sidenav' element={<Sidenav/>}/>
+                   <Route path='/myserviced' element={<Myserviced/>}/>
                     <Route path='/addedservice' element={<Addedservice/>}/>
                     <Route path='/contactme' element={<Contactme/>}/>
                     <Route path='/customers review' element={<Customersreview/>}/> 
                     <Route path="/sidenav" element={<Sidenav/>}/>
                     <Route path="/project" element={<Projectdone/>}/>
 
+                   </>
+                   )}
+                    <Route path='*' element={<Navigate to={user ? "/Login" : "/auth"}/>}/>
+                
+                   <Route path='/' element={<Home/>}/>
           </Routes>
     
           </BrowserRouter>
@@ -51,3 +58,19 @@ const Carrier = () => {
 }
 
 export default Carrier
+
+
+
+
+/*
+
+useEffect(() => {
+  
+  const u=localStorage.getItem("user")
+  u && JSON.parse(u) ? setuser(true):setuser(false)
+  }, [])
+  
+useEffect(() => {
+  localStorage.setItem("user",user)
+}, [user])
+*/

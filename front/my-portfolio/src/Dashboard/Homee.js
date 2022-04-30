@@ -8,7 +8,7 @@ import Sidenav from './Sidenav'
 const Homee = () => {
  
     return (
-        <div className="servicecontainer">
+        <div className="content6">
           <Sidenav/>
              <div className="row">
               <div className="col-xl-3 col-sm-6 grid-margin stretch-card">

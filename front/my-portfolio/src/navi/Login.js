@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({xignup}) => {
 
     
  const [user, setuser] = useState({
@@ -51,8 +52,9 @@ const Login = () => {
                 <br/>
                 <input type="password" id="password" value={user.password} onChange={handlechange} />
                 <br/>
-                <button type="submit">Login</button>
-            </form>
+                 <button type="submit" onClick={xignup}>Login</button> 
+               </form>
+            <Link to="/dashboard"> dash</Link>
         </div>
     )
 }
