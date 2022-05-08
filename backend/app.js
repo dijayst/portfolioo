@@ -5,7 +5,7 @@ const app= express();
 const bodyParser=require('body-parser')
 const cors=require("cors");
 const PORT=process.env.PORT|| 5050;
-
+const bcrypt =require('bcrypt')
 
 const mysql=require('mysql');
 //const { request } = require("http");
@@ -195,7 +195,7 @@ app.post('/signup',(req,res)=>{
     const fullname=req.body.fullname;
     const email=req.body.email;
     const password=req.body.password;
-  
+ // bcrypt.hash(password,10).then((hash)=>{ })
 console.log(req.body)
 //console.log(req.body.productdescription)
 console.log(req.body.data);
@@ -205,7 +205,7 @@ console.log(req.body.data);
 console.log(result)
 console.log(err)
     })
-    
+ //   hash(salt + 'password')
 console.log(req.body.fullname)
 console.log(req.body.email)
 console.log(req.body.password)
