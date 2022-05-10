@@ -6,7 +6,7 @@ const bodyParser=require('body-parser')
 const cors=require("cors");
 const PORT=process.env.PORT|| 5050;
 const bcrypt =require('bcrypt')
-
+const saltRounds =10
 const mysql=require('mysql');
 //const { request } = require("http");
 const db=mysql.createPool({
@@ -191,26 +191,28 @@ app.get('/signup',(req,res)=>{
 
 
 
-app.post('/signup',(req,res)=>{
+app.post('/signup',async(req,res)=>{
     const fullname=req.body.fullname;
     const email=req.body.email;
-    const password=req.body.password;
- // bcrypt.hash(password,10).then((hash)=>{ })
+    const hashedPassword=await bcryct.hash(req.body.password,10);
 console.log(req.body)
 //console.log(req.body.productdescription)
 console.log(req.body.data);
 
-    const sqlInsert="INSERT INTO Admin (fullname,email,password)VALUES(?,?,?)"
-    db.query(sqlInsert,[fullname,email,password],(err,result)=>{
+ // bcrypt.hash(password,saltRounds,(err,hash)=>{
+//if (err){ console.log(err)}
+    const sqlInsert="INSERT INTO Admin (fullname,email,hashedPassword)VALUES(?,?,?)"
+    db.query(sqlInsert,[fullname,email,hashedPassword],(err,result)=>{
 console.log(result)
 console.log(err)
     })
+  })/*
  //   hash(salt + 'password')
 console.log(req.body.fullname)
 console.log(req.body.email)
 console.log(req.body.password)
 
-})
+})*/
 //post login
 
 app.post('/login',(req,res)=>{
@@ -218,21 +220,50 @@ app.post('/login',(req,res)=>{
     const password=req.body.password
   
    
-    db.query("SELECT* FROM Admin WHERE email=? AND password=?",[email,password],(err,result)=>{
+    db.query("SELECT* FROM Admin WHERE email=? ;",
+    email,
+    //[email,password]
+    (err,result)=>{
 console.log(result)
 if(err){
-    res.send({err:err})
+    res.send({err:err});
 }
-if(result.lenght>0){
-    res.send(result);
+if(result.lenght==0){
+    console.log("user does not exist");
+   res.sendStatus(404)
+}
+else{
+    const hashedPassword = result[0].password
+if(await bcrypt.compare(password,hashedPassword))
+
+{
+    console.log("---------> Login Successful")
+    res.send(`${user} is logged in!`)
+    } 
+    else {
+    console.log("---------> Password Incorrect")
+    res.send("Password incorrect!")
+    }}
+    })
+    })
+    /*
+    })
+
+=>{
+       if(response){
+           res.send(result)
+       }else{
+    res.send({message:"wrong email/password"})
+       }
+   })
 }else{
-    res.send({message:"wrong data"})
+    res.send({message:"user does not"})
     //make the entry data same *
 }
     })
 })
 
-
+*/
 
 
 
