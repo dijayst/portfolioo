@@ -1,4 +1,177 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
+import axios from "axios";
+import {Link} from 'react-router-dom'
+
+ /*const initialState={
+     Email:"",
+     fullname:"",
+     Lastname:"",
+     Password:"",
+     Signup:""
+ }*/
+
+
+const Signup= () => {
+
+  
+  const [fullname, setfullname] = useState("");
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
+ // let [fullnameerror, setfullnameerror] = useState("");
+ // let [lastnameerror, setlastnameerror] = useState("");
+ // let [emailerror, setemailerror] = useState("");
+ // let [passworderror, setpassworderror] = useState("")
+
+  /* { id: "phonenumber",
+     label:"phonenumber",
+     placeholder:"999-999-9999",
+     value:"",
+     error:false,
+     helperText: "any valid number will do ",
+     getHelperText:error=>
+       error?"woops.Not a valid phone number"
+       :"any valid number will do ",
+       isValid : value=>
+/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(value)
+
+    
+  },
+  
+  {
+    id:"email",
+    label:"email",
+    placeholder:"john@gmail.com",
+    value:"",
+    error:false,
+    helperText:"any valid address will do",
+    getHelperText:error=>error?
+    "woops.Not a valid email address":
+    "any valid email address will do",
+    isValid : value=>/\S+@\S+\.\S+/.test(value)
+
+  }
+const validate=()=>{
+  //let fullnameerror="";
+  //let lastnameerror="";
+  //let emailError="";
+  //let passworderror="";
+
+  if (password.length < 8){
+    setpassworderror="must be 8 digit"
+
+  }
+  if(password.includes("0123456789")){
+    setpassworderror="should include digit"
+  }
+  
+  if(password.includes("@,$,0,#")){
+    setpassworderror="should includesymbols"
+  }
+  if(!fullname.includes("0123456789")){
+    setfullnameerror="invalidname"
+  }
+  if(!lastname.includes("0123456789")){
+    setlastnameerror="invalidlastname"
+  }
+  if(email.includes("@")){
+    emailerror="valid email"
+  }
+  if(emailerror){
+    setemailerror({emailerror});
+    return false;
+  }
+  return true;
+}
+*/
+console.log(fullname,email,password)
+const handlesubmit=(e)=>{
+e.preventDefault()
+//const isValid=validate();
+//if(isValid){
+  //console.log(fullnameerror,fullname,lastname,lastnameerror,emailerror,email,password,passworderror);}
+  console.log(fullname,email,password)
+//console.log(cost)
+//  console.log(e.target.value)
+
+axios.post("http://localhost:5050/api/signin",{
+//phonenumber:customer.phonenumber,
+fullname:fullname,
+email:email,
+password:password
+})
+.then((Response)=>{
+ console.log(Response.data)
+console.log("i gotten it")
+})
+.catch(error=>{
+console.log(error)
+console.log("i deny")
+})
+}
+
+
+  //  const [state, dispatch] = useReducer(reducer, initialState)
+    return (
+        <div className="div">
+
+          
+<p>hhhhhhhhhhhhhhhhhhbbbbbbb</p>
+ <p>hhhhhhhhhhhhhhhhhhbbbbbbb</p>
+
+ <p>hhhhhhhhhhhhhhhhhhbbbbbbb</p>
+
+ <p>hhhhhhhhhhhhhhhhhhbbbbbbb</p>
+ <p>hhhhhhhhhhhhhhhhhhbbbbbbb</p>
+ <p>hhhhhhhhhhhhhhhhhhbbbbbbb</p>
+ <p>hhhhhhhhhhhhhhhhhhbbbbbbb</p>
+
+ <p>hhhhhhhhhhhhhhhhhhbbbbbbb</p>
+ <p>hhhhhhhhhhhhhhhhhhbbbbbbb</p>
+
+              <form  autoComplete="off"  onSubmit={handlesubmit}>
+                
+               <br/>
+                   <input
+                   type="text"
+                        placeholder="fullname"
+                        value={fullname}
+                        onChange={(e)=>{setfullname(e.target.value)}}
+                   />
+
+                    
+               <br/>
+               <input
+               type="email"
+                  value={email}
+                  onChange={(e)=>{setemail(e.target.value)}}
+                  placeholder="any valid email address will do"/>
+                
+                <br/>
+
+                <input
+                type="password"
+                 value={password}
+                  placeholder="create your password "
+                  onChange={(e)=>{setpassword(e.target.value)}}/>
+                 
+               <br/><br/>
+            
+            <button type="submit" onClick={()=>{console.log(fullname,email,password)}} >Register</button>
+            
+            <Link to="/Login"> <button>Loginup</button></Link>
+     
+            
+            </form>
+
+        </div>
+    )
+}
+
+export default Signup
+
+
+
+/*import React,{useState} from 'react'
 import Login from './Login';
 import axios from 'axios';
 
@@ -65,9 +238,10 @@ console.log("i deny")
                 <button type="submit">Signup</button>
            
             </form>
-            <Login />
+        
         </div>
     )
 }
 
 export default Signup
+*/
