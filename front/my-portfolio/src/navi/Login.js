@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setpassword] = useState("");
    const [loginstatus, setloginstatus] = useState("")
 
-
+axios.defaults.withCredentials=true
   
 console.log(email,password)
 const handlesubmit=(e)=>{

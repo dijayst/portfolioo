@@ -7,7 +7,7 @@ const cors=require("cors");
 const PORT=process.env.PORT|| 5050;
 const bcrypt =require('bcrypt')
 
-//const saltRounds =10
+const saltRounds =10
 const mysql=require('mysql');
 //const { request } = require("http");
 const db=mysql.createPool({
@@ -18,8 +18,22 @@ const db=mysql.createPool({
 })
 
 
-app.use(cors());
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(cors({
+    origin:["http://localhost:3000"],
+    methods:["GET","POST"],
+    credentials:true
+}));
+app.use(cookieParser())
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(session({
+    key:"portfoilo",
+    secret:"besties",
+    resave:false,
+    saveUninitialized:false,
+    cookie:{
+        expires:60*60*24,
+    }
+}))
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -206,16 +220,48 @@ app.get('/api/getcustomer',(req,res)=>{
 
 //post from signin
 
-app.post('/api/signin',(req,res)=>{
-    const fullname=req.body.fullname
+app.post('/api/signin',async(req,res)=>{
+    /*const fullname=req.body.fullname
     const email=req.body.email
     const password=req.body.password
-  
+  bcrypt.hash(password,saltRounds,(err,hash)=>{
+if(err){
+    console.log(err)
+}
+
     const sqlInsert="INSERT INTO Admin(fullname,email,password)VALUES(?,?,?)"
     db.query(sqlInsert,[fullname,email,password],(err,result)=>{
 console.log(result)
-
+console.log(err)
     })
+
+  
+  });
+*/    
+
+
+
+
+
+try{
+    const salt=await bcrypt.genSalt()
+    const hashedpassword=await bcrypt.hash(req.body.password,salt)
+    console.log(salt)
+    console.log(hashedpassword)
+   const fullname=req.body.fullname
+    const email=req.body.email
+    const password=req.body.password
+ 
+    const sqlInsert="INSERT INTO Admin(fullname,email,password)VALUES(?,?,?)"
+    db.query(sqlInsert,[fullname,email,password],(err,result)=>{
+console.log(result)
+console.log(err)
+    })
+  
+}catch{
+    res.send({message:"ughgh"})
+}
+
 })
 //post login
 
@@ -224,15 +270,25 @@ app.post('/api/login',(req,res)=>{
     const password=req.body.password
   
    // const sqlInsert="INSERT INTO customers(email,password)VALUES(?,?)"
-    db.query("SELECT* FROM Admin WHERE email=? AND password=?",[email,password],(err,result)=>{
+    db.query("SELECT* FROM Admin WHERE email=? ;",[email],(err,result)=>{
 console.log(result)
 if(err){
     res.send({err:err})
 }
 if(result.lenght>0){
     res.send(result);
+    bcrypt.compare(password,result.password,(error,Response)=>{
+        if(Response){
+            console.log(req.session.user)
+            req.session.user=result;
+            res.send(result)
+
+        }else{
+             res.send({message:"wrong data"})
+        }
+    })
 }else{
-    res.send({message:"wrong data"})
+    res.send({message:"user doesnt exist"})
     //make the entry data same *
 }
     })
