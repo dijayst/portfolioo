@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import {Link} from 'react-router-dom';
 import axios from "axios";
 
@@ -29,7 +29,7 @@ email:email,
 password:password,
 })
 .then((Response)=>{
- //console.log(Response.data)
+ console.log(Response.data)
 //console.log(Response)
 //console.log("i gotten it")
 if(Response.data.message){
@@ -44,6 +44,12 @@ console.log(error)
 console.log("i deny")
 })
 }
+/*
+useEffect(() => {
+  axios.get("http://localhost:5050/api/login").then((response)=>{
+    console.log((response))
+  })
+})*/
     return (
         <div  className="di">    
         
@@ -80,7 +86,7 @@ console.log("i deny")
                   onChange={(e)=>{setpassword(e.target.value)}}/>
                  
                <br/><br/>
-               <Link to="/Signup"> <button>Sign up</button></Link>
+               <Link to="/Admin"> <button>Sign up</button></Link>
      
             <button type="submit" onClick={()=>{console.log(email,password)}} >Login</button>
             <br/>

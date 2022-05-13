@@ -1,5 +1,5 @@
-import React from 'react'
-import Sidenav from './Sidenav'
+import React,{useEffect,useState} from 'react'
+import axios from 'axios'
 //import './Dash.css'
 
 
@@ -7,9 +7,25 @@ import Sidenav from './Sidenav'
 
 const Homee = () => {
  
+     const [rangee, setrangee] = useState([])
+    useEffect(()=>{
+        axios.get("http://localhost:5050/api/getcustomer")
+        .then((Response)=>{
+            setrangee(Response.data)
+            //setproductlist(Response.productimage)
+               console.log(Response.data)
+              // console.log(Response.productimage)
+               console.log("i gotten it")
+             })
+             .catch(error=>{
+               console.log(error)
+               console.log("i deny")
+             })
+            
+    })
     return (
         <div className="content6">
-          <Sidenav/>
+           
              <div className="row">
               <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <div className="card">
@@ -49,7 +65,7 @@ const Homee = () => {
                         </div>
                       </div>
                     </div>
-                    <h6 className="text-muted font-weight-normal">Revenue current</h6>
+                    <h6 className="text-muted font-weight-normal">total customer</h6>
                   </div>
                 </div>
               </div>
@@ -69,7 +85,7 @@ const Homee = () => {
                         </div>
                       </div>
                     </div>
-                    <h6 className="text-muted font-weight-normal">Daily Income</h6>
+                    <h6 className="text-muted font-weight-normal">total login</h6>
                   </div>
                 </div>
               </div>
@@ -96,8 +112,11 @@ const Homee = () => {
             </div>
            
 
+ <div>
+        
 
-
+        </div>
+     
   <div className="roww ">
               <div className="col-12 grid-margin">
                 <div className="card">
@@ -105,7 +124,7 @@ const Homee = () => {
                     <h4 className="card-title">Order Status</h4>
                     <div className="table-responsive">
                       <table className="table">
-                        <thead>
+                        <thead className="thead">
                           <tr>
                             <th>
                               <div className="form-check form-check-muted m-0">
@@ -114,16 +133,17 @@ const Homee = () => {
                                 </label>
                               </div>
                             </th>
-                            <th> Client Name </th>
-                            <th> Order No </th>
-                            <th> Product Cost </th>
-                            <th> Project </th>
-                            <th> Payment Mode </th>
-                            <th> Start Date </th>
-                            <th> Payment Status </th>
+                            <th> ID </th>
+                            <th> Fullname </th>
+                            <th> Email </th>
+                            <th> Password </th>
                           </tr>
                         </thead>
-                        <tbody>
+                        
+{rangee.map((item)=>{
+    return(
+
+                        <tbody className="tbody">
                           <tr>
                             <td>
                               <div className="form-check form-check-muted m-0">
@@ -136,107 +156,25 @@ const Homee = () => {
                               <img src="assets/imgas/faces/face1.jpg" alt="imga" />
                               <span className="pl-2">Henry Klein</span>
                             </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> Dashboard </td>
-                            <td> Credit card </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div className="badge badge-outline-success">Approved</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="form-check form-check-muted m-0">
-                                <label className="form-check-label">
-                                  <input type="checkbox" className="form-check-input"/>
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <img src="assets/imgas/faces/face2.jpg" alt="imae" />
-                              <span className="pl-2">Estella Bryan</span>
-                            </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> Website </td>
-                            <td> Cash on delivered </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div className="badge badge-outline-warning">Pending</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="form-check form-check-muted m-0">
-                                <label className="form-check-label">
-                                  <input type="checkbox" className="form-check-input"/>
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <img src="assets/imgas/faces/face5.jpg" alt="imga" />
-                              <span className="pl-2">Lucy Abbott</span>
-                            </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> App design </td>
-                            <td> Credit card </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div className="badge badge-outline-danger">Rejected</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="form-check form-check-muted m-0">
-                                <label className="form-check-label">
-                                  <input type="checkbox" className="form-check-input"/>
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <img src="assets/imgas/faces/face3.jpg" alt="imga" />
-                              <span className="pl-2">Peter Gill</span>
-                            </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> Development </td>
-                            <td> Online Payment </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div className="badge badge-outline-success">Approved</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="form-check form-check-muted m-0">
-                                <label className="form-check-label">
-                                  <input type="checkbox" className="form-check-input"/>
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <img src="assets/imgas/faces/face4.jpg" alt="imga" />
-                              <span className="pl-2">Sallie Reyes</span>
-                            </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> Website </td>
-                            <td> Credit card </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div className="badge badge-outline-success">Approved</div>
-                            </td>
-                          </tr>
-                        </tbody>
+                            <td> {item.id} </td>
+                            <td> {item.fullname} </td>
+                            <td> {item.email} </td>
+                            <td> {item.Password} </td>
+                           </tr>
+
+                          </tbody>
+                            
+                           
+    )
+})}
                       </table>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
           
+
+          </div>
         </div>
     )
 }

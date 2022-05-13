@@ -6,7 +6,8 @@ const bodyParser=require('body-parser')
 const cors=require("cors");
 const PORT=process.env.PORT|| 5050;
 const bcrypt =require('bcrypt')
-
+const session =require("express-session");
+const cookieParser = require("cookie-parser")
 const saltRounds =10
 const mysql=require('mysql');
 //const { request } = require("http");
@@ -263,6 +264,16 @@ console.log(err)
 }
 
 })
+/*
+app.get("/api/login",(res,req)=>{
+    if(req.session.user){
+        res.send({loggedIn:true,
+        user:req.session.user})
+    }else{
+        res.send({loggedIn:false})
+    }
+})*/
+
 //post login
 
 app.post('/api/login',(req,res)=>{
@@ -270,13 +281,15 @@ app.post('/api/login',(req,res)=>{
     const password=req.body.password
   
    // const sqlInsert="INSERT INTO customers(email,password)VALUES(?,?)"
-    db.query("SELECT* FROM Admin WHERE email=? ;",[email],(err,result)=>{
+    db.query("SELECT* FROM Admin WHERE email=? AND password = ? ",[email,password],(err,result)=>{
 console.log(result)
 if(err){
-    res.send({err:err})
+  //  res.send({err:err})
+    res.status(500).send(err)
 }
-if(result.lenght>0){
-    res.send(result);
+else{if (result.lenght>0){
+    //res.send(result);
+    res.status(200).send(result[0])
     bcrypt.compare(password,result.password,(error,Response)=>{
         if(Response){
             console.log(req.session.user)
@@ -284,12 +297,14 @@ if(result.lenght>0){
             res.send(result)
 
         }else{
-             res.send({message:"wrong data"})
+            // res.send({message:"wrong data"})
+            res.status(400).send("wrong data /info")
         }
     })
 }else{
     res.send({message:"user doesnt exist"})
     //make the entry data same *
+}
 }
     })
 })

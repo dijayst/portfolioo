@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from "axios";
 import {Link} from 'react-router-dom'
+import {useNavigate} from "react-router-dom";
 
  /*const initialState={
      Email:"",
@@ -11,8 +12,20 @@ import {Link} from 'react-router-dom'
  }*/
 
 
-const Signup= () => {
+const Signup= ({authenticate}) => {
 
+/*
+  const [sign, setsign] = useState(false)
+   const showshop=()=>{
+     setsign(!sign)
+   }
+*/
+    const navigate=useNavigate();
+
+    const change=()=>{
+        authenticate();
+        navigate("/Login")
+    }
   
   const [fullname, setfullname] = useState("");
   const [email, setemail] = useState("");
@@ -159,7 +172,8 @@ console.log("i deny")
             <button type="submit" onClick={()=>{console.log(fullname,email,password)}} >Register</button>
             
             <Link to="/Login"> <button>Loginup</button></Link>
-     
+       <button onClick={change}>login o</button>
+        {setpassword==="" ? console.log("enter all details") :  <button type="submit" onClick={()=>{console.log(fullname,email,password)}} >Register</button> }
             
             </form>
 

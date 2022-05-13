@@ -65,9 +65,9 @@ border: 4px ;
         height: 100%;
         left: 0;
         z-index: 0;
-        margin:150px 0px 0px 2px;
+        margin:0px 0px 0px 2px;
     width: 20%;
-        background-color: rgb(161, 98, 25);
+        background-color: #08031c;
         flex-wrap:nowrap;
         flex-direction: column;
         
@@ -133,7 +133,7 @@ b{
     
 }   
 .nav-item{
-
+;
         
 }
             }
@@ -241,20 +241,31 @@ color: $color;
 
     .servicecontainer{
 
-        height:100%;
+        
         background-color: gold;
         margin:0px 0px 0px 300px;
         padding:0px;
-        width: 80%;
+        
     }
 
 
 
 
     .table{
-         margin: -70% 0% 0% 20%; 
+         margin: -100% -20% 0% -200%; 
          justify-content: space-between;
-         background-color: #ad0d0d;
+         background-color: $backgroundcolor;
+         height:50%;
+         .thead{
+             background-color:red;
+             height:50px;
+         }
+         .tbody{
+             height:50px;
+         }
+         .tbody::hover{
+             background-color:red;
+         }
     }
 
     .content1{

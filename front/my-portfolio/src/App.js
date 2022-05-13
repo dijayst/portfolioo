@@ -1,4 +1,4 @@
-
+import React from 'react'
 import Carrier from './navi/Carrier';
 //import './navi/Navi.css';
 
