@@ -70,6 +70,7 @@ console.log(range)
     return(
         <div key={item.id}>
             
+            
             <img src={item.productimage} alt={item.productimage} height="170px" width="170px"/>
 </div>
     )

@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 //import { Link } from 'react-router-dom'
 import{HashLink as Link} from 'react-router-hash-link';
-import nab from './nab.jpg';
+import ster from './ster.jpeg';
 
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ console.log({click})
             <div className="nav-container">
                <nav className="navbar navbar-expand-lg custom_nav-container ">
               <div className="divimg">
-           <img src={nab}  className="imgea1" alt="hrk" height="170px" width="170px"/>
+           <img src={ster}  className="imgea1" alt="hrk" height="170px" width="170px"/>
           <br/>
            <b>
               OLUBIYI ESTHER</b> <i className='fas fa-caret-down' />

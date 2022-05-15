@@ -10,6 +10,13 @@ const Login = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
    const [loginstatus, setloginstatus] = useState("")
+  /* const [formerrors, setformerrors] = useState(
+     email="",
+     password="",
+     emailvalid=false,
+     passwordvalid=false,
+     formvalid=false,
+   )*/
 
 axios.defaults.withCredentials=true
   
@@ -29,7 +36,7 @@ email:email,
 password:password,
 })
 .then((Response)=>{
- console.log(Response.data)
+ console.log(Response)
 //console.log(Response)
 //console.log("i gotten it")
 if(Response.data.message){

@@ -1,5 +1,5 @@
 import React from 'react'
-import nab from './nab.jpg';
+import ster from './ster.jpeg';
 import Aboutus from './Aboutus';
 
 import Myservice from './Myservice';
@@ -48,7 +48,7 @@ const Home = () => {
 
 <div className="gitimage">
    
- <img src={nab}  className="imge" alt="hrk" height="70px" width="70px"/>
+ <img src={ster}  className="imge" alt="hrk" height="70px" width="70px"/>
 <h4>Hi! I'm Esther.I am a frontend developer</h4>
 <button>
 <a  href="https://github.com/dijayst" >SEE ME ON GITHUB</a></button>
