@@ -1,25 +1,33 @@
 
- @media (max-width:750px){
+ @media (max-width:700px){
     .App{
-        background-color: yellow;
+        
         
     }
+    
+  
+    .sidebar{
+      background-color: blue;
+      width: 100%;
+      height: 0px;
+  margin: -1% 0% 0% 0%;
    .header_section{
      
 .navbar{
   display: block;
   margin: -17% 70% 0% 0%;
   background-color: $backing;
-  width: 100%;
-  height: 500px;
+  position: fixed;
+height: 0px;
   .nav-links{
       width: 100%;
       
   }
-  .navbar-toggler{
+  navbar-toggler{
       border: 2px solid red;
-    
-      
+      margin:50px 0px 0px 0%;
+      z-index: 0;
+      opacity: 1;
       
 .toggl{
     background-color: gold;
@@ -32,7 +40,7 @@
   }
 }
 }
-
+    }
 
 
 
@@ -40,7 +48,7 @@
 .nav-menu {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 30%;
     height: 90vh;
     position: fixed;
     top: 80px;
@@ -58,8 +66,57 @@
     transition: all 0.5s ease;
     z-index: 1;
   height: 400px;
-  margin-top: -10%;
+  margin-top: -11%;
   
   }
 
+}
+
+
+.content1{
+  background-color: $backgroundcolor;
+margin: 1% 0% 0% -0%;
+}
+
+.content{
+    
+  margin: 1% 0% 0% 2%;
+  height: 100%;
+  background-color: $backgroundcolor;
+  
+  .gitimage{
+    font-size: 40px;
+  margin: 0px 0px 200px -250px;
+
+  }
+
+}
+
+.btn{
+  background-color: red;
+  height: 20px;
+}
+
+
+
+
+
+
+
+
+.navbar-toggler{
+  background-color: rgb(183 ,247 ,181);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content:flex-start;
+  position: fixed;
+  align-items: center;
+  margin: -9px 0px 0px -14px;
+}
+
+.menu-bars{
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
 }

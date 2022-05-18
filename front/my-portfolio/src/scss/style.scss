@@ -6,7 +6,6 @@
     padding: 0px;
   
 }
-
 .App{
     background-color:$backgroundcolor;
     color: $color;
@@ -142,10 +141,56 @@ b{
 
 
     
+
+.tile-row{
+    
+    display: grid;
+   grid-template-columns:300px 270px 270px ;
+   grid-template-rows: 250px 250px;
+   grid-gap:30px 30px ;
+   margin: 0px 0px 80px 80px;
+   
+.tile{
+
+text-align: center;
+border-radius: 0.3rem;
+color: $color;
+
+.marketimage{
+    border-radius: 33px;
+    
+}
+
+}
+}
+
+    .containerarray{
+        color: $aboutme;
+    }
+
+    .stack1{
+        background-color:  #f9bf3f;
+    text-align: center;
+    
+    .stack{
+        position: fixed;
+        width: 50%;
+        flex-wrap:nowrap;
+        flex-direction: row;        
+    }
+    }
+
+.content{
+    
+    margin: 1% 0% 0% 51%;
+    height: 100%;
+    background-color: $backgroundcolor;
+    
+    
     .container{
         color:red;
 background-color: $backgroundcolor;
-margin:0px 0px 0px 70px;
+margin:0px 0px 0px 300px;
 padding:0px;
 
 .gitimage{
@@ -155,7 +200,7 @@ padding:0px;
    
   .imge{
     display: block; /* remove extra space below image */
-width: 70%;
+width: 90%;
 height: 510px;
 }
 h4 {
@@ -185,46 +230,6 @@ button {
 
 
 }
-
-.tile-row{
-    
-    display: grid;
-   grid-template-columns:300px 270px 270px ;
-   grid-template-rows: 250px 250px;
-   grid-gap:30px 30px ;
-   margin: 0px 0px 80px 80px;
-   
-.tile{
-
-text-align: center;
-border-radius: 0.3rem;
-color: $color;
-
-.marketimage{
-    border-radius: 33px;
-    
-}
-
-}
-}
-
-    .containerarray{
-        color: $aboutme;
-    }
-
-    .stack{
-        background-color: #f9bf3f;
-    text-align: center;
-    margin: 0px px 0px 0px;
-    
-    }
-
-.content{
-    
-    margin: 1% 0% 0% 22%;
-    height: 100%;
-    background-color: $backgroundcolor;
-    
 }
 
 
@@ -269,7 +274,14 @@ color: $color;
 
     .content1{
         background-color: $backgroundcolor;
-    margin: 1% 0% 0% -25%;
+    margin: 1% 0% 0% 20%;
     }
-
+.navbar-toggler{
+    width: 0%;
+    height: 0%;
+    .menu-bars{
+        width: 0%;
+        height:0%;
+    }
+}
     @import 'mobile';

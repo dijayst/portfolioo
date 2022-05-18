@@ -2,7 +2,40 @@ import axios  from 'axios';
 import React,{useEffect, useState} from 'react'
 import nab from './nab.jpg';
 
+const Slideshow=({imgs})=>{
+    const [index, setindex] = useState(0)
+    useEffect(() => {
+       setindex(0)
+    }, [])
 
+    const next=()=>{
+        if(index===imgs.length -1){
+        setindex(0)
+    }else{
+        setindex(index+1)
+    }
+}
+    const prev=()=>{
+        if(index===0){
+            setindex(imgs.length -1)
+        }else{
+            setindex(index - 1)
+        }
+    }
+
+return(
+    <div>
+  <img src={imgs[index]} alt="imgfg" height="170px" width="170px"/>
+ 
+  <img src={imgs} alt={imgs} height="170px" width="170px"/>
+ 
+  <div>
+<button onClick={prev}>hy</button>
+<button onClick={next}>hehg</button>
+  </div>
+    </div>
+)
+}
 const Myskill = () => {
     const [range, setrange] = useState([])
    /* const changerange=(e)=>{
@@ -61,17 +94,17 @@ console.log(range)
     })
     return (
         <div id="skill" className="content">
-        <div className="stack">
+        <div className="stack1">
            
 
 <h3> MY STACK</h3>
 
 {range.map((item)=>{
     return(
-        <div key={item.id}>
+        <div key={item.id} className="stack">
             
-            
-            <img src={item.productimage} alt={item.productimage} height="170px" width="170px"/>
+            <Slideshow imgs={item.productimage}/>
+          
 </div>
     )
 })}

@@ -15,7 +15,13 @@ const [click, setClick] = useState(false);
 console.log({click})
     return (
         <div>
-            
+            <div className="navbar-toggler">
+
+            <button className="menu-bars" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className={click ?'fas fa-times' : 'fas fa-bars'} onClick={handleClick}> helo</span>
+                  </button>
+           
+            </div>
       <div className="sidebar">
 
          <header className="header_section">
@@ -27,10 +33,6 @@ console.log({click})
            <b>
               OLUBIYI ESTHER</b> <i className='fas fa-caret-down' />
             
-           
-                  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className={click ?'fas fa-times' : 'fas fa-bars'} onClick={handleClick}> helo</span>
-                  </button>
                
           <p>frontend developer in Nigeria</p>
               </div>
@@ -123,8 +125,8 @@ console.log({click})
             </Link>
                         </li>
                         <form className="form-inline">
-                           <button className="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                           <i className="fa fa-search" aria-hidden="true"></i>
+                           <button onClick={click} className="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                           <i className="fa fa-search" aria-hidden="true">cancel</i>
                            </button>
                         </form>
                      </ul>
