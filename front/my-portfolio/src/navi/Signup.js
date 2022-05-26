@@ -27,9 +27,25 @@ const Signup= ({authenticate}) => {
         navigate("/Login")
     }
   
-  const [fullname, setfullname] = useState("");
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+  const [details, setdetails] = useState({
+    email:"",
+    fullname:"",
+    password:""
+  });
+
+
+  const handledetails=(e)=>{
+    const newdetails={...details}
+    newdetails[e.target.id]=e.target.value
+    setdetails(newdetails)
+    console.log(newdetails)
+  //  console.log(cost)
+    //setcost(e.target.value)
+ 
+ }
+
+  //const [email, setemail] = useState("");
+  //const [password, setpassword] = useState("");
  // let [fullnameerror, setfullnameerror] = useState("");
  // let [lastnameerror, setlastnameerror] = useState("");
  // let [emailerror, setemailerror] = useState("");
@@ -96,21 +112,21 @@ const validate=()=>{
   return true;
 }
 */
-console.log(fullname,email,password)
+console.log(details.fullname,details.email,details.password)
 const handlesubmit=(e)=>{
 e.preventDefault()
 //const isValid=validate();
 //if(isValid){
   //console.log(fullnameerror,fullname,lastname,lastnameerror,emailerror,email,password,passworderror);}
-  console.log(fullname,email,password)
+  console.log(details.fullname,details.email,details.password)
 //console.log(cost)
 //  console.log(e.target.value)
 
 axios.post("http://localhost:5050/api/signin",{
 //phonenumber:customer.phonenumber,
-fullname:fullname,
-email:email,
-password:password
+fullname:details.fullname,
+email:details.email,
+password:details.password
 })
 .then((Response)=>{
  console.log(Response.data)
@@ -145,35 +161,37 @@ console.log("i deny")
                 
                <br/>
                    <input
+                   id="fullname"
                    type="text"
                         placeholder="fullname"
-                        value={fullname}
-                        onChange={(e)=>{setfullname(e.target.value)}}
+                        value={details.fullname}
+                        onChange={(e)=>{handledetails(e)}}
                    />
 
                     
                <br/>
                <input
+               id="email"
                type="email"
-                  value={email}
-                  onChange={(e)=>{setemail(e.target.value)}}
+                  value={details.email}
+                  onChange={(e)=>{handledetails(e)}}
                   placeholder="any valid email address will do"/>
                 
                 <br/>
 
                 <input
+                id="password"
                 type="password"
-                 value={password}
+                 value={details.password}
                   placeholder="create your password "
-                  onChange={(e)=>{setpassword(e.target.value)}}/>
+                  onChange={(e)=>{handledetails(e)}}/>
                  
                <br/><br/>
             
-            <button type="submit" onClick={()=>{console.log(fullname,email,password)}} >Register</button>
             
             <Link to="/Login"> <button>Loginup</button></Link>
-       <button onClick={change}>login o</button>
-        {setpassword==="" ? console.log("enter all details") :  <button type="submit" onClick={()=>{console.log(fullname,email,password)}} >Register</button> }
+       <button type="submit" onClick={change}>Register</button>
+        {setdetails==="" ? console.log("enter all details") :  <button type="submit" onClick={()=>{console.log(details.fullname,details.email,details.password)}} >egister</button> }
             
             </form>
 

@@ -1,47 +1,29 @@
 import axios  from 'axios';
 import React,{useEffect, useState} from 'react'
 import nab from './nab.jpg';
+import Slide from './Slide';
+//import AliceCarousel from 'react-alice-carousel';
+//import "react-alice-carousel/lib/alice-carousel.css";
 
-const Slideshow=({imgs})=>{
-    const [index, setindex] = useState(0)
-    useEffect(() => {
-       setindex(0)
-    }, [])
 
-    const next=()=>{
-        if(index===imgs.length -1){
-        setindex(0)
-    }else{
-        setindex(index+1)
-    }
-}
-    const prev=()=>{
-        if(index===0){
-            setindex(imgs.length -1)
-        }else{
-            setindex(index - 1)
-        }
-    }
-
-return(
-    <div>
-  <img src={imgs[index]} alt="imgfg" height="170px" width="170px"/>
- 
-  <img src={imgs} alt={imgs} height="170px" width="170px"/>
- 
-  <div>
-<button onClick={prev}>hy</button>
-<button onClick={next}>hehg</button>
-  </div>
-    </div>
-)
-}
 const Myskill = () => {
     const [range, setrange] = useState([])
-   /* const changerange=(e)=>{
+    
+    const [slideindex, setslideindex] = useState(1)
+    const nextslide=()=>{
+
+    }
+    const prevslide=()=>{
+
+    }
+      
+    /* const changerange=(e)=>{
 setrange(e.target.value)
 console.log(range)
     }*/
+//const [index, setIndex] = useState(0)
+  //   const slide=()=>{ setIndex((prevIndex)=>prevIndex + 1) }
+    
     useEffect(()=>{
         axios.get("http://localhost:5050/stack")
         .then((Response)=>{
@@ -101,13 +83,17 @@ console.log(range)
 
 {range.map((item)=>{
     return(
-        <div key={item.id} className="stack">
+        <div key={item.id} className={slideindex===item+1 ? "slide  active-anim":"slide"}>
             
-            <Slideshow imgs={item.productimage}/>
-          
+            <img src={item.productimage} alt="img"  className="slideimg"  />
+            
+
 </div>
     )
 })}
+<Slide moveslide={nextslide} direction={"next"}/>
+
+<Slide moveslide={prevslide} direction={"prev"}/>
 <p>
 
 MY SKILLS
@@ -118,7 +104,7 @@ The Big Oxmox advised her not to do so, because there were thousands of bad Comm
 
 <h4>I AM EVERYWHERE !</h4>
 <img src={nab} alt="ghh"height="80px" />
-
+yea ha
 <img src={nab} alt="ghh"height="80px" />
 
 RANGE
@@ -137,6 +123,7 @@ RANGE
 
         </div>
         </div>
+        
     )
 }
 

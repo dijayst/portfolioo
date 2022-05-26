@@ -14,7 +14,7 @@ const [click, setClick] = useState(false);
 
 console.log({click})
     return (
-        <div>
+        <div className="di">
             <div className="navbar-toggler">
 
             <button className="menu-bars" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

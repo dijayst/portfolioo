@@ -54,7 +54,10 @@ const Contact = () => {
             <input className="contact" value={input.Name} id="Name" type="text" onChange={handlechange} placeholder="Name"/>
 <br/>
             <label><b>Email</b></label><br/>
-            <input type="email" className="contact" placeholder="enter your email" id="Email" value={input.Email} onChange={handlechange}/>
+            <input type="email"
+             className="contact" 
+             placeholder="enter your email"
+              id="Email" value={input.Email} onChange={handlechange}/>
             <br/>
             <label><b>Comment or message </b></label><br/>
             <textarea rows="5"  cols="29" value={input.Message} id="Message" onChange={handlechange}>leave a message here</textarea><br/><br/>

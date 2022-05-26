@@ -44,7 +44,8 @@ const Home = () => {
     return (
         <div id="#"className="content" >
             <Navbar/>
-<section className="container">
+            <div className="container">
+<section >
 
 <div className="gitimage">
    
@@ -61,6 +62,7 @@ const Home = () => {
 <section className="content1"><Works/></section>
 <section className="content1"><Blog/></section>
 <section className="content1"><Contact/></section>
+</div>
         </div>
         
     )

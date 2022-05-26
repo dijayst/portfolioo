@@ -70,7 +70,15 @@ border: 4px ;
         flex-direction: column;
         
     }
-
+.di{
+    .navbar-toggler{
+        width: 0%;
+        height: 0%;
+        display: none;
+        .menu-bars{
+            width: 0%;
+            height:0%;
+        }}
     .sidebar{
         position: fixed;
         height: 100%;
@@ -131,12 +139,12 @@ b{
     
 }   
 .nav-item{
-;
+
         
 }
             }
         
-    }}
+    }}}
 
 
 
@@ -171,20 +179,22 @@ color: $color;
     .stack1{
         background-color:  #f9bf3f;
     text-align: center;
-    
-    .stack{
-        position: fixed;
+    .slide{
+        
         width: 50%;
-        flex-wrap:nowrap;
-        flex-direction: row;        
+        height: 10%;
+        opacity: 0;
+        transition: opacity ease-in-out 0.4;        
     }
+    .active-anim{opacity: 1;}
     }
 
 .content{
     
-    margin: 1% 0% 0% 51%;
+    
     height: 100%;
     background-color: $backgroundcolor;
+    width: 80%;
     
     
     .container{
@@ -192,7 +202,7 @@ color: $color;
 background-color: $backgroundcolor;
 margin:0px 0px 0px 300px;
 padding:0px;
-
+width: 100%;
 .gitimage{
    
    font-size: 40px;
@@ -227,6 +237,14 @@ button {
 
 
 
+
+.content1{
+
+    background-color: $backgroundcolor;
+color: black;
+
+
+}
 
 
 }
@@ -270,18 +288,18 @@ button {
          .tbody::hover{
              background-color:red;
          }
-    }
+    
+}
 
-    .content1{
-        background-color: $backgroundcolor;
-    margin: 1% 0% 0% 20%;
-    }
-.navbar-toggler{
-    width: 0%;
-    height: 0%;
-    .menu-bars{
-        width: 0%;
-        height:0%;
-    }
+.btn-slidenext{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: red;
+    border: 1px solid rgb(177, 126, 16);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
 }
     @import 'mobile';
