@@ -2,6 +2,9 @@ import React,{useState} from 'react'
 //import { Link } from 'react-router-dom'
 import{HashLink as Link} from 'react-router-hash-link';
 import ster from './ster.jpeg';
+import { GrClose } from 'react-icons/gr'
+import{GiHamburgerMenu} from 'react-icons/gi'
+
 
 
 const Navbar = () => {
@@ -17,8 +20,8 @@ console.log({click})
         <div className="di">
             <div className="navbar-toggler">
 
-            <button className="menu-bars" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className={click ?'fas fa-times' : 'fas fa-bars'} onClick={handleClick}> helo</span>
+            <button className="menu-bars" onClick={handleClick}>
+                    <GiHamburgerMenu className={click ?'fas fa-times' : 'fas fa-bars'} /> 
                   </button>
            
             </div>
@@ -27,6 +30,8 @@ console.log({click})
          <header className="header_section">
             <div className="nav-container">
                <nav className="navbar navbar-expand-lg custom_nav-container ">
+               <GrClose className="close" onClick={()=>{handleClick()}}/>
+             <div  className={click ? 'nav-menu active' : 'nav-menu'}>
               <div className="divimg">
            <img src={ster}  className="imgea1" alt="hrk" height="170px" width="170px"/>
           <br/>
@@ -34,11 +39,11 @@ console.log({click})
               OLUBIYI ESTHER</b> <i className='fas fa-caret-down' />
             
                
-          <p>frontend developer in Nigeria</p>
+          <p>frontend developer in Nigeria  <GrClose onClick={click}/></p>
               </div>
                   <div className="collapse navbar-collapse" id="navbarSupportedContent">
                   <br/><br/>
-                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                     <ul>
                         <li className="nav-item active">
                         <Link smooth to="#"
               className='nav-links'
@@ -124,17 +129,14 @@ console.log({click})
               Dashboard <i className='fas fa-caret-down' />
             </Link>
                         </li>
-                        <form className="form-inline">
-                           <button onClick={click} className="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                           <i className="fa fa-search" aria-hidden="true">cancel</i>
-                           </button>
-                        </form>
+                       
                      </ul>
                      
                   </div>
-                  
-          
+                 
+          </div>
                </nav>
+
             </div>
          </header>
         </div>
