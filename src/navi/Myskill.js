@@ -25,7 +25,7 @@ console.log(range)
   //   const slide=()=>{ setIndex((prevIndex)=>prevIndex + 1) }
     
     useEffect(()=>{
-        axios.get("http://localhost:5050/stack")
+        axios.get("https://eembryo.herokuapp.com/stack")
         .then((Response)=>{
             setrange(Response.data)
             //setproductlist(Response.productimage)
@@ -60,7 +60,7 @@ setrange(e.target.value)
 console.log(range)
     }*/
     useEffect(()=>{
-        axios.get("http://localhost:5050/range")
+        axios.get("https://eembryo.herokuapp.com/range")
         .then((Response)=>{
             setrangee(Response.data)
             //setproductlist(Response.productimage)

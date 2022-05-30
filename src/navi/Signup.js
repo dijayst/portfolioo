@@ -122,7 +122,7 @@ e.preventDefault()
 //console.log(cost)
 //  console.log(e.target.value)
 
-axios.post("http://localhost:5050/api/signin",{
+axios.post("https://eembryo.herokuapp.com/api/signin",{
 //phonenumber:customer.phonenumber,
 fullname:details.fullname,
 email:details.email,
@@ -238,7 +238,7 @@ formdata.set("email", signup.email)
 formdata.set("password", signup.password)
 
 axios.post(
-"http://localhost:5050/signup",
+"https://eembryo.herokuapp.com/signup",
 formdata,
 )
 .then(res=>{console.warn(res)

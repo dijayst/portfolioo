@@ -5,7 +5,7 @@ const Customersreview = () => {
 const [contactmelist, setcontactmelist] = useState([])
   useEffect(() => {
   
-    axios.get("http://localhost:5050/review")
+    axios.get("https://eembryo.herokuapp.com/review")
     .then((Response)=>{
    setcontactmelist(Response.data)
    //setproductlist(Response.productimage)

@@ -24,7 +24,7 @@ e.preventDefault()
 //console.log(cost)
 //  console.log(e.target.value)
 
-axios.post("http://localhost:5050/range",{
+axios.post("https://eembryo.herokuapp.com/range",{
 Rang:Rangeinper.Rang,
 name:Rangeinper.name,
 })
@@ -77,7 +77,7 @@ console.log("i deny")
     
         //console.log(e.target.files);
        // console.log({description});
-            axios.post("http://localhost:5050/stack",formdata,
+            axios.post("https://eembryo.herokuapp.com/stack",formdata,
              /* {headers:{"content-Type":"multipart/form-data"},
             
              productimage:userinfo.file,

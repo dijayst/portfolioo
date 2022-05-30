@@ -10,7 +10,7 @@ const Addedservice = () => {
    
    useEffect(() => {
    
-     axios.get("http://localhost:5050/file")
+     axios.get("https://eembryo.herokuapp.com/file")
      .then((Response)=>{
     setwhatido(Response.data)
     //setproductlist(Response.productimage)

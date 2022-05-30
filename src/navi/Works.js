@@ -4,7 +4,7 @@ import axios from 'axios';
 const Works = () => {
     const [project, setproject] = useState([]);
     useEffect(() => {
-       axios.get("http://localhost:5050/project")
+       axios.get("https://eembryo.herokuapp.com/project")
        
         .then((Response)=>{
             setproject(Response.data)

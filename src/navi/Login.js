@@ -30,7 +30,7 @@ e.preventDefault()
 //console.log(cost)
 //  console.log(e.target.value)
 
-axios.post("http://localhost:5050/api/login",{
+axios.post("https://eembryo.herokuapp.com/api/login",{
 
 email:email,
 password:password,
@@ -53,7 +53,7 @@ console.log("i deny")
 }
 /*
 useEffect(() => {
-  axios.get("http://localhost:5050/api/login").then((response)=>{
+  axios.get("https://eembryo.herokuapp.com/api/login").then((response)=>{
     console.log((response))
   })
 })*/
@@ -155,7 +155,7 @@ const Login = ({xignup}) => {
   formdata.set("password", user.password)
  
   axios.post(
-    "http://localhost:5050/login",
+    "https://eembryo.herokuapp.com/login",
     formdata,
     )
     .then(res=>{console.warn(res)
