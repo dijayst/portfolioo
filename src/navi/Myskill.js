@@ -14,7 +14,7 @@ const Myskill = () => {
 
     }
     const prevslide=()=>{
-
+setslideindex(slideindex)
     }
       
     /* const changerange=(e)=>{
