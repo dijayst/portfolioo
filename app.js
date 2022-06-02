@@ -11,12 +11,7 @@ const cookieParser = require("cookie-parser")
 const saltRounds =10
 const mysql=require('mysql');
 //const { request } = require("http");
-const db=mysql.createPool({
-    host:'us-cdbr-east-05.cleardb.net',
-    user:'be7aa5fa4ef7f7',
-    password:'c1bbb940',
-    database:'heroku_a457de2669210f3'
-})
+
 app.use(cors({
     origin:["http://localhost:3000"],
     methods:["GET","POST"],
