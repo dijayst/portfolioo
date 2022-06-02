@@ -21,7 +21,6 @@ const Works = () => {
     return (
         <div id="work" className="content">
             <div>
-<a href="https://grand-cocada-4fec4a.netlify.app/"><img src="https://grand-cocada-4fec4a.netlify.app/" alt="helo"/></a>
 <a href="https://cozy-youtiao-f4d19f.netlify.app/">hhh</a>
 <a href="https://sparkly-dasik-27ea8f.netlify.app/">jjjh</a>
 https://peaceful-beijinho-03f6ae.netlify.app/
