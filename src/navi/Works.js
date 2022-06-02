@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import axios from 'axios';
 
 const Works = () => {
-    const [project, setproject] = useState([]);
+    const [projects, setproject] = useState([]);
     useEffect(() => {
        axios.get("https://eembryo.herokuapp.com/project")
        
@@ -33,7 +33,7 @@ tictak
 
             </div>
             
-            {project.map((item)=>{
+            {projects.map((item)=>{
              return(
                  <div key={item}>
                  <h4>{item.projecttitle}:</h4>
