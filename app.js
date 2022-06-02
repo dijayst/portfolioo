@@ -18,7 +18,7 @@ const db=mysql.createPool({
     database:'heroku_a457de2669210f3'
 })
 app.use(cors({
-    origin:["http://localhost:3000"],
+    origin:["https://preeminent-basbousa-2bee72.netlify.app/"],
     methods:["GET","POST"],
     credentials:true
 }));
