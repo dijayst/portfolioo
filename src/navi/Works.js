@@ -7,6 +7,7 @@ const Works = () => {
        axios.get("https://eembryo.herokuapp.com/project")
        
         .then((Response)=>{
+            setproject(projects)
             setproject(Response.data)
             //setproductlist(Response.productimage)
                console.log(Response.data)
