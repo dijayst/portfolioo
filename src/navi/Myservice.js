@@ -39,7 +39,7 @@ textAlign:"center"
 <div className="tile-row">
 {
    whatido.map((item)=>{
-return(
+
    
 
    <div key={item.id} className="tile">
@@ -48,7 +48,7 @@ return(
  <p>{item.productdescription}</p>
 
 </div>
-)
+
    })
 }
 <br/>

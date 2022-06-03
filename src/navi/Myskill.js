@@ -66,6 +66,7 @@ console.log(range)
             //setproductlist(Response.productimage)
                console.log(Response.data)
               // console.log(Response.productimage)
+              //mysql://be7aa5fa4ef7f7:c1bbb940@us-cdbr-east-05.cleardb.net/heroku_a457de2669210f3?reconnect=true
                console.log("i gotten it")
              })
              .catch(error=>{
