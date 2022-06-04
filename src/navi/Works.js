@@ -8,7 +8,7 @@ const Works = () => {
        
         .then((Response)=>{
 
-            setproject(Response.data.projects)
+            setproject(Response.data)
             //setproductlist(Response.productimage)
                console.log(Response.data)
               // console.log(Response.productimage)

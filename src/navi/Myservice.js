@@ -11,7 +11,7 @@ const Myservice = () => {
    
      axios.get("https://eembryo.herokuapp.com/file")
      .then((Response)=>{
-    setwhatido(Response.data.whatido)
+    setwhatido(Response.data)
     //setproductlist(Response.productimage)
        console.log(Response.data)
       // console.log(Response.productimage)
