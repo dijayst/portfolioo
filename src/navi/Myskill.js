@@ -26,7 +26,7 @@ console.log(range)
     
     useEffect(()=>{
         axios.get("https://eembryo.herokuapp.com/stack")
-        .then((Response)=>{
+        .then(Response=>{
             setrange(Response.data)
             
             //setproductlist(Response.productimage)
@@ -62,7 +62,7 @@ console.log(range)
     }*/
     useEffect(()=>{
         axios.get("https://eembryo.herokuapp.com/range")
-        .then((Response)=>{
+        .then(Response=>{
             setrangee(Response.data)
             //setproductlist(Response.productimage)
                console.log(Response.data)

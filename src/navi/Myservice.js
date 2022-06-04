@@ -11,9 +11,8 @@ const Myservice = () => {
    useEffect(() => {
    
      axios.get("https://eembryo.herokuapp.com/file")
-     .then((Response)=>{
+     .then(Response=>{
     setwhatido(Response.data)
-    setwhatido(Response.data.result)
     setloading(true)
     //setproductlist(Response.productimage)
        console.log(Response.data)
