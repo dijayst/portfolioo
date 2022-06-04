@@ -5,7 +5,7 @@ import axios from 'axios';
  
 const Myservice = () => {
 
-   const [whatido, setwhatido] = useState(item[])
+   const [whatido, setwhatido] = useState([])
    
    useEffect(() => {
    
@@ -38,7 +38,7 @@ textAlign:"center"
    </p>
 <div className="tile-row">
 {
-   whatido.item.map((item)=>{
+   whatido.map((item)=>{
 return(
    <div key={item.id} className="tile">
  <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
