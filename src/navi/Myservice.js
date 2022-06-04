@@ -38,7 +38,7 @@ textAlign:"center"
    </p>
 <div className="tile-row">
 {
-   whatido.map((item)=>{
+ object.values(whatido).map((item)=>{
 return(
    <div key={item.id} className="tile">
  <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
