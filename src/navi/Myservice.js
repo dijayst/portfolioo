@@ -5,15 +5,19 @@ import axios from 'axios';
  
 const Myservice = () => {
 
-   const [whatido, setwhatido] = useState("")
+   const [whatido, setwhatido] = useState([])
+   const [loading, setloading] = useState(false)
    
    useEffect(() => {
    
      axios.get("https://eembryo.herokuapp.com/file")
      .then((Response)=>{
-    setwhatido(Response)
+    setwhatido(Response.data)
+    setwhatido(Response.data.result)
+    setloading(true)
     //setproductlist(Response.productimage)
        console.log(Response.data)
+       console.log(Response.data.result)
       // console.log(Response.productimage)
        console.log("i gotten it")
      })
