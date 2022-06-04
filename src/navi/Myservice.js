@@ -5,7 +5,7 @@ import axios from 'axios';
  
 const Myservice = () => {
 
-   const [whatido, setwhatido] = useState([])
+   const [whatido, setwhatido] = useState("")
    
    useEffect(() => {
    
