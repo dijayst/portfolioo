@@ -4,11 +4,15 @@ import axios from 'axios';
 
  
 const Myservice = () => {
+
+   const [whatido, setwhatido] = useState([])
    
    useEffect(() => {
    
      axios.get("https://eembryo.herokuapp.com/file")
-     .then((Response)=>{   //setproductlist(Response.productimage)
+     .then((Response)=>{
+    setwhatido(Response.data.whatido)
+    //setproductlist(Response.productimage)
        console.log(Response.data)
       // console.log(Response.productimage)
        console.log("i gotten it")
@@ -33,7 +37,18 @@ textAlign:"center"
       MY SERVICES</b>
    </p>
 <div className="tile-row">
+{
+ whatido.map((item)=>{
+return(
+   <div key={item.id} className="tile">
+ <img src={item.market} alt="hrk" height="70px" width="70px" className="marketimage"/>
+ <h4>{item.productimage}</h4>
+ <p>{item.productdescription}</p>
 
+</div>
+)
+   })
+}
 <br/>
 <br/>
 
