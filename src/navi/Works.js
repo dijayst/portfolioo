@@ -9,6 +9,7 @@ const Works = () => {
         .then((Response)=>{
 
             setproject(Response.data)
+            setproject(Response.data.projects)
             //setproductlist(Response.productimage)
                console.log(Response.data)
               // console.log(Response.productimage)

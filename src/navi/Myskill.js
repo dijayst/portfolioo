@@ -28,7 +28,7 @@ console.log(range)
         axios.get("https://eembryo.herokuapp.com/stack")
         .then(Response=>{
             setrange(Response.data)
-            
+            setrange(Response.data.range)
             //setproductlist(Response.productimage)
                console.log(Response.data)
               // console.log(Response.productimage)
@@ -64,6 +64,8 @@ console.log(range)
         axios.get("https://eembryo.herokuapp.com/range")
         .then(Response=>{
             setrangee(Response.data)
+            
+            setrangee(Response.data.rangee)
             //setproductlist(Response.productimage)
                console.log(Response.data)
               // console.log(Response.productimage)
