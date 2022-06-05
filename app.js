@@ -12,9 +12,9 @@ const saltRounds =10
 const mysql=require('mysql');
 //const { request } = require("http");
 const db=mysql.createPool({
-    host:'localhost',
-    user:'root',
-    password:'',
+    host:'us-cdbr-east-05.cleardb.net',
+    user:'be7aa5fa4ef7f7',
+    password:'c1bbb940',
     database:'heroku_a457de2669210f3'
 })
 //mysql://be7aa5fa4ef7f7:c1bbb940@us-cdbr-east-05.cleardb.net/heroku_a457de2669210f3?reconnect=true
