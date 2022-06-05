@@ -43,7 +43,7 @@ app.use('/Images',express.static('./Images'));
 
 
 //app.get("/Image/:id",routes.Image)
-app.get("/",(req,res)=>{
+app.get("/file",(req,res)=>{
     console.log("here")
     console.log(app.use(express.static(path.join(__dirname,'./Images'))))
     res.send("help")
@@ -156,7 +156,7 @@ app.post('/file',upload.single('file'), function(req, res) {
       })
     })
     
-app.get('/file',(req,res)=>{
+app.get('/',(req,res)=>{
     const sqlSelect="SELECT * FROM service";
     db.query(sqlSelect,(err,result)=>{
         console.log(result)
