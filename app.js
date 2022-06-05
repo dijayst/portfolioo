@@ -12,13 +12,14 @@ const saltRounds =10
 const mysql=require('mysql');
 //const { request } = require("http");
 const db=mysql.createPool({
-    host:'us-cdbr-east-05.cleardb.net',
-    user:'be7aa5fa4ef7f7',
-    password:'c1bbb940',
+    host:'localhost',
+    user:'root',
+    password:'',
     database:'heroku_a457de2669210f3'
 })
+//mysql://be7aa5fa4ef7f7:c1bbb940@us-cdbr-east-05.cleardb.net/heroku_a457de2669210f3?reconnect=true
 app.use(cors({
-    origin:["https://preeminent-basbousa-2bee72.netlify.app"],
+    origin:["http://localhost:5050/"],
     methods:["GET","POST"],
     credentials:true
 }));
