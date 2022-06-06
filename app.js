@@ -18,6 +18,8 @@ const db=mysql.createPool({
     database:'heroku_a457de2669210f3'
 })
 //mysql://be7aa5fa4ef7f7:c1bbb940@us-cdbr-east-05.cleardb.net/heroku_a457de2669210f3?reconnect=true
+
+//mysql://be7aa5fa4ef7f7:c1bbb940@us-cdbr-east-05.cleardb.net/heroku_a457de2669210f3?reconnect=true
 app.use(cors({
     origin:["http://localhost:5050/"],
     methods:["GET","POST"],
@@ -43,7 +45,7 @@ app.use('/Images',express.static('./Images'));
 
 
 //app.get("/Image/:id",routes.Image)
-app.get("/file",(req,res)=>{
+app.get("/",(req,res)=>{
     console.log("here")
     console.log(app.use(express.static(path.join(__dirname,'./Images'))))
     res.send("help")
@@ -156,7 +158,7 @@ app.post('/file',upload.single('file'), function(req, res) {
       })
     })
     
-app.get('/',(req,res)=>{
+app.get('/file',(req,res)=>{
     const sqlSelect="SELECT * FROM service";
     db.query(sqlSelect,(err,result)=>{
         console.log(result)
