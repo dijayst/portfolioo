@@ -9,15 +9,18 @@ const bcrypt =require('bcrypt')
 const session =require("express-session");
 const cookieParser = require("cookie-parser")
 const saltRounds =10
-const mysql=require('mysql');
+//const mysql=require('mysql');
 const morgan = require('morgan')
 const mongoose = require('mongoose');
-const config = require('config');
+//const { url } = require("inspector");
+//const config = require('config');
 //require("dotenv").config();
 
-const dbConfig = config.get('Portfolio.dbConfig.dbName');
+//const dbConfig = config.get('Portfolio.dbConfig.dbName');
 
- mongoose.connect(dbConfig,{
+const uri=process.env.MONGODB_CONNECTION_STRING;
+
+ mongoose.connect(uri,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -27,14 +30,18 @@ const dbConfig = config.get('Portfolio.dbConfig.dbName');
 }).catch(()=>{
     console.log("database doesnt connect")
 })
+const connection=mongoose.connection;
+connection.once("open",()=>{
+    console.log("it connected successfully");
+})
 //const { request } = require("http");
-const db=mysql.createPool({
+//const db=mysql.createPool({
     //host:'us-cdbr-east-05.cleardb.net',
     //user:'be7aa5fa4ef7f7',
     //password:'c1bbb940',
     //database:'heroku_a457de2669210f3'
     
-})
+//})
 //mongodb+srv://sther:<password>@cluster0.osywkt4.mongodb.net/?retryWrites=true&w=majority
 //mysql://be7aa5fa4ef7f7:c1bbb940@us-cdbr-east-05.cleardb.net/heroku_a457de2669210f3?reconnect=true
 
@@ -544,8 +551,12 @@ console.log(result)
 
 
 //post from signin
-
+/*
 app.listen(process.env.PORT || PORT,()=>{
+    console.log("server running on port 5050")
+})
+*/
+app.listen( PORT,()=>{
     console.log("server running on port 5050")
 })
 
