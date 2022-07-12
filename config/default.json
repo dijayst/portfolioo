@@ -1,0 +1,10 @@
+{
+    // Customer module configs
+    "Portfolio": {
+      "dbConfig": {
+        "host": "localhost",
+        "port": 5984,
+        "dbName": 'mongodb+srv://sther:p@$$w0rd@cluster0.osywkt4.mongodb.net/?retryWrites=true&w=majority'
+      },
+    }
+  }
