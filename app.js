@@ -13,7 +13,7 @@ const mysql=require('mysql');
 const morgan = require('morgan')
 const mongoose = require('mongoose');
 const config = require('config');
-require("dotenv").config();
+//require("dotenv").config();
 
 const dbConfig = config.get('Portfolio.dbConfig.dbName');
 
