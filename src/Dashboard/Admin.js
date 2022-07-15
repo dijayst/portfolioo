@@ -18,7 +18,7 @@ const Admin = () => {
             
             <Routes>
             <Route path='/stack' element={<Mystack/>}/>
-            <Route path='/' element={<Homee/> }/>
+            <Route path='/dashboard' element={<Homee/> }/>
 
                    <Route path='/myserviced' element={<Myserviced/>}/>
                     <Route path='/addedservice' element={<Addedservice/>}/>

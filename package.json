@@ -2,7 +2,7 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://eembryo.herokuapp.com/",
+  "proxy": "http://localhost:5050",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@testing-library/jest-dom": "^5.16.2",
