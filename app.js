@@ -4,7 +4,9 @@ const path=require('path')
 const app= express();
 const bodyParser=require('body-parser')
 const cors=require("cors");
-const PORT=process.env.PORT|| 5050;
+//const PORT=process.env.PORT|| 5050;
+//const PORT=process.env.MONGODB_CONNECTION_STRING|| 5050;
+const PORT=5050;
 const bcrypt =require('bcrypt')
 const session =require("express-session");
 const cookieParser = require("cookie-parser")
@@ -14,17 +16,18 @@ const morgan = require('morgan')
 const mongoose = require('mongoose');
 //const { url } = require("inspector");
 //const config = require('config');
-//require("dotenv").config();
+require("dotenv").config();
 
 //const dbConfig = config.get('Portfolio.dbConfig.dbName');
 
+//const uri="mongodb+srv://stherhh:helloo@cluster0.osywkt4.mongodb.net/?retryWrites=true&w=majority";
 const uri=process.env.MONGODB_CONNECTION_STRING;
 
  mongoose.connect(uri,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
+    //useFindAndModify: false,
+    //useCreateIndex: true
 }).then (()=>{
     console.log("database connected")
 }).catch(()=>{
@@ -34,6 +37,7 @@ const connection=mongoose.connection;
 connection.once("open",()=>{
     console.log("it connected successfully");
 })
+//https://musleek.netlify.app/
 //const { request } = require("http");
 //const db=mysql.createPool({
     //host:'us-cdbr-east-05.cleardb.net',
@@ -75,12 +79,8 @@ app.use('/Images',express.static('./Images'));
 app.get("/",(req,res)=>{
     console.log("here")
     console.log(app.use(express.static(path.join(__dirname,'./Images'))))
-    res.send("help")
+    res.send("helphhjg")
 })
-
-
-
-
 //get from seller table111
 app.get('/api/get',(req,res)=>{
     const sqlSelect="SELECT * FROM productsinfo";
@@ -90,6 +90,7 @@ app.get('/api/get',(req,res)=>{
   })
 })
 ///byId/
+
 
 app.get('/api/get/:id',(req,res)=>{
     var id=req.params.id;
@@ -185,31 +186,62 @@ app.post('/file',upload.single('file'), function(req, res) {
       })
     })
     
+const Service={
+    productdescription:String,
+    market:String,
+    productimage:{data:Buffer,
+    contentType:String},
+    id:Number
+}
+
+const monmodel=mongoose.model("service",Service);
+
 app.get('/file',(req,res)=>{
-    const sqlSelect="SELECT * FROM service";
-    db.query(sqlSelect,(err,result)=>{
-        console.log(result)
-        res.send(result)      
-  })
+  //  const sqlSelect="SELECT * FROM service";
+    //db.query(sqlSelect,(err,result)=>{
+      //  console.log(result)
+       // res.send(result)       })
+       monmodel.find()
+       .then(result=>{
+           res.status(200).json({
+               studentData:result
+           });
+       })
+       .catch(err=>{
+           console.log("err")
+           res.status(500).json({
+               error:err
+           })
+       })
 })
 
 
 
 app.post('/api/insert',upload.single('avatar'),async (req,res)=>{
    
-    const  productdescription=req.body.productdescription;
-    const market=req.body.market;
-    const productimage=req.file.path;
-
+   // const  productdescription=req.body.productdescription;
+    //const market=req.body.market;
+    //const productimage=req.file.path;
+    const data=new monmodel({
+ productdescription:req.body.productdescription,
+  market:req.body.market,
+ productimage:{
+     data:req.file.path,
+       contentType:"productimage/png"
+},
+ id:req.body.id
+    });
+    const val=await data .save();
+    res.json(val);
  
-console.log(req.body)
+ 
+//console.log(req.body)
 //console.log(req.body.productdescription)
-console.log(req.body.data);
-const sqlInsert="INSERT INTO service (productimage,productdescription,market)VALUES(?,?,?)"
-db.query(sqlInsert,[productdescription,market,productimage],(err,result)=>{
-console.log(result)
-console.log(err)
-})
+//console.log(req.body.data);
+//const sqlInsert="INSERT INTO service (productimage,productdescription,market)VALUES(?,?,?)"
+//db.query(sqlInsert,[productdescription,market,productimage],(err,result)=>{
+//console.log(result)
+//console.log(err)})
 console.log(req.body.productdescription)
 console.log(req.body.market)
 console.log(req.files)
