@@ -6,7 +6,11 @@
     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix my-portfolio && npm run build --prefix my-portfolio",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "devStart": "nodemon app.js"
+    "devStart": "nodemon app.js",
+    "engines":{
+      "node":"14.4.0",
+      "npm":"6.14.5"
+    }
   },
   "author": "",
   "license": "ISC",
