@@ -4,9 +4,13 @@ const path=require('path')
 const app= express();
 const bodyParser=require('body-parser')
 const cors=require("cors");
-//const PORT=process.env.PORT|| 5050;
+const PORT=process.env.PORT|| 5050;
+//"build":"cd my-portfolio && npm run build",
+//"install-client":"cd my-portfolio && npm install",
+//"client":"cd my-portfolio && npm start",
+
 //const PORT=process.env.MONGODB_CONNECTION_STRING|| 5050;
-const PORT=5050;
+//const PORT=5050;
 const bcrypt =require('bcrypt')
 const session =require("express-session");
 const cookieParser = require("cookie-parser")
@@ -75,6 +79,15 @@ app.use('/Images',express.static('./Images'));
 
 
 
+if (process.env.NODE_ENV ==="production"){
+    app.use(express.static("my-portfolio/build"));}
+//if env
+//if (process.env.NODE_ENV ==="production"){
+  //  app.use(express.static(path.join(__dirname,"/my-portfolio/build")));
+    //app.get('*',(req,res)=>{res.sendFile(path.join(__dirname,'my-portfolio','build','index.html'))})}
+//else{
+  //  app.get('/',(res,req)=>{
+    //    res.send("api running")})}
 //app.get("/Image/:id",routes.Image)
 app.get("/",(req,res)=>{
     console.log("here")

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build":"cd my-portfolio && npm run build",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix my-portfolio && npm run build --prefix my-portfolio",
+    "install-client":"cd my-portfolio && npm install",
+    "client":"cd my-portfolio && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "devStart": "nodemon app.js"
