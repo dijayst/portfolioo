@@ -78,7 +78,6 @@ app.use(express.json());
 app.use('/Images',express.static('./Images'));
 
 
-
 if (process.env.NODE_ENV ==="production"){
     app.use(express.static("my-portfolio/build"));}
 //if env
