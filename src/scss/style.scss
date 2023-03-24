@@ -1,4 +1,4 @@
-
+/*
  @import 'config';
  
 *{
@@ -209,7 +209,8 @@ width: 100%;
    margin:0px 0px 200px 0px;
    
   .imge{
-    display: block; /* remove extra space below image */
+    display: block;
+     // remove extra space below image 
 width: 90%;
 height: 510px;
 }
@@ -303,3 +304,356 @@ color: black;
 
 }
     @import 'mobile';
+
+
+
+    */
+
+
+
+
+
+    
+ @import 'config';
+ 
+ *{
+     margin: 0px;
+     padding: 0px;
+   
+ }
+ .App{
+     background-color:$backgroundcolor;
+     color: $color;
+ }
+ .contact{
+     border-top:4px;
+     height: 23px;
+     width: 200px;
+ }
+ 
+ .carousel-items{
+     float: left;
+     background-color: "";
+ margin: -20% 50% 0% 0%;
+ border: 4px ;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ .carousel-itemO0{
+ 
+     margin: -10% 60% 20% 10%;
+     background-color: purple;
+     }
+     
+     .carousel-item1{
+         background-color: rgb(150, 182, 8);
+         margin: -10% 60% 0% 24%;
+     
+     
+     }
+     .card-body{
+         background-color: rgb(35, 141, 40);
+         margin:0% 19% 25% 63%;
+     }
+     .carousel-itemm22{
+         background-color: rgb(35, 61, 141);
+     margin:-4.5% 40% -5% 43%;
+     }
+     
+ 
+ 
+ 
+     .sidebar11{
+         position: fixed;
+         height: 100%;
+         left: 0;
+         z-index: 0;
+         margin:0px 0px 0px 2px;
+     width: 20%;
+         background-color: #08031c;
+         flex-wrap:nowrap;
+         flex-direction: column;
+         
+     }
+ .di{
+     .navbar-toggler{
+         width: 0%;
+         height: 0%;
+         display: none;
+         .menu-bars{
+             width: 0%;
+             height:0%;
+         }}
+     .sidebar{
+         position: fixed;
+         height: 100%;
+         left: 0;
+         z-index: 0;
+ 
+     width: 25%;
+         background-color: $navbackground;
+         flex-wrap:nowrap;
+         flex-direction: column;
+         border-top-right-radius: 0.5rem;
+        
+     .header_section{
+         
+ 
+             .navbar{
+                 text-align: center;
+                 position: fixed;
+                 top: 5px;
+                 left: 0;
+                 z-index: 0;
+                 width: 25%;
+                 height: 100%;
+                 overflow: scroll;
+                 flex-wrap:nowrap;
+                 flex-direction: column;
+                 background-color:$navbackground;
+                 border-top-right-radius: 0.5rem;
+                 
+                 .divimg{
+                     
+ b{
+     font-size: 150%;
+     color: $color;
+ }
+ 
+                     .imgea1{top: -50px;
+                     border-radius: 80px;
+                     }
+                 }
+                 
+                 .nav-links{
+                     text-decoration: none;
+                     color: $color;
+                     top: 500px;
+                     
+                 }
+                 .nav-links:hover{
+                     color: #dc2626;
+                                 // color:$text; 
+                                  text-decoration: underline;
+                                  background-color: inherit;
+                                  
+   
+   
+                 }
+                                 
+ .navbar-nav{
+     
+ }   
+ .nav-item{
+ 
+         
+ }
+             }
+         
+     }}}
+ 
+ 
+ 
+     
+ 
+ .tile-row{
+     
+     display: grid;
+    grid-template-columns:300px 270px 270px ;
+    grid-template-rows: 250px 250px;
+    grid-gap:30px 30px ;
+    margin: 0px 0px 80px 80px;
+    
+ .tile{
+ 
+ text-align: center;
+ border-radius: 0.3rem;
+ color: $color;
+ 
+ .marketimage{
+     border-radius: 33px;
+     
+ }
+ 
+ }
+ }
+ 
+     .containerarray{
+         color: $aboutme;
+     }
+ 
+     .stack1{
+         background-color:  #f9bf3f;
+     text-align: center;
+     .slide{
+         
+         width: 50%;
+         height: 10%;
+         opacity: 0;
+         transition: opacity ease-in-out 0.4;        
+     }
+     .active-anim{opacity: 1;}
+     }
+ 
+ .content{
+     height: 100%;
+     background-color: $backgroundcolor;
+     width: 75%;
+     
+     .container{
+         
+ 
+         .welcome {
+             color: #dc2626;
+             text-align: center;
+             font-size: 40px;
+ 
+             
+ 
+         }
+         .line{
+             position: relative;
+             border-right: 4px solid green;
+             width: 100%;
+             white-space: nowrap;
+             overflow: hidden;
+             list-style: none;
+             font-size:20px;
+         }
+         .textani{
+           
+animation: typewritter 3s steps(30) 1s 1 normal both,
+blinkCursor 0.5s step(12) infinite normal;
+@keyframes typewritter {
+    from{
+        width:0;
+    }
+    to{
+        width: 100%;
+    }
+    
+}
+@keyframes blinkCursor {
+   from {
+        border-right-color: red;
+
+    }
+    to{
+        border-right-color:white
+    }
+}
+         }
+         .wecomeresume{
+            align-content: center;
+            background-color: #dc2626;
+       font-size: 20px;
+       font-weight: bold;
+         }
+         color:$color;
+ background-color: $backgroundcolor;
+ margin:0px 0px 0px 450px;
+ padding:0px;
+ width: 86%;
+ 
+ .content1{
+ 
+     background-color: $backgroundcolor;
+ color: $color;
+ //.content2{
+    // color: $color;
+    // font-size: 20px;
+     .gitimage{
+    
+         font-size: 40px;
+         margin:0px 0px 200px 0px;
+         width: 50%;
+        .imge{
+          display: block; /* remove extra space below image */
+      width: 90%;
+      height: 510px;
+      }
+      h4 {
+          margin: -300px 0px 0px 0px;
+          text-align: center;
+          z-index: 0;
+      
+      }
+      button {
+          margin: -200px 0px 0px 0px;
+          z-index: 0;
+          text-decoration: none;
+          height: 30px;
+          width: 150px;
+          a{
+              text-decoration: none;
+          }
+      }
+      
+ }
+ 
+ .textdiv{
+    // background-color: goldenrod;
+     width: 50%;
+     margin: -105% 0% 0% 50%;
+ }
+ //}
+ 
+ }
+ 
+ 
+ }
+ }
+ 
+ 
+ 
+     
+ 
+ 
+ 
+ 
+     
+ 
+ 
+ 
+     .servicecontainer{
+ 
+         
+         background-color: gold;
+         margin:0px 0px 0px 300px;
+         padding:0px;
+         
+     }
+     .table{
+          margin: -100% -20% 0% -200%; 
+          justify-content: space-between;
+          background-color: $backgroundcolor;
+          height:50%;
+          .thead{
+              background-color:red;
+              height:50px;
+          }
+          .tbody{
+              height:50px;
+          }
+          .tbody::hover{
+              background-color:red;
+          }
+     
+ }
+ 
+ .btn-slidenext{
+     width: 10px;
+     height: 10px;
+     border-radius: 10px;
+     background-color: red;
+     border: 1px solid rgb(177, 126, 16);
+     position: absolute;
+     display: flex;
+     justify-content: center;
+ 
+ }
+     @import 'mobile';
