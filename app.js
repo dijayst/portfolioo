@@ -15,7 +15,7 @@ const bcrypt =require('bcrypt')
 const session =require("express-session");
 const cookieParser = require("cookie-parser")
 const saltRounds =10
-//const mysql=require('mysql');
+const mysql=require('mysql');
 const morgan = require('morgan')
 const mongoose = require('mongoose');
 //const { url } = require("inspector");
@@ -43,13 +43,13 @@ connection.once("open",()=>{
 })
 //https://musleek.netlify.app/
 //const { request } = require("http");
-//const db=mysql.createPool({
-    //host:'us-cdbr-east-05.cleardb.net',
-    //user:'be7aa5fa4ef7f7',
-    //password:'c1bbb940',
-    //database:'heroku_a457de2669210f3'
+const db=mysql.createPool({
+    host:'us-cdbr-east-05.cleardb.net',
+    user:'be7aa5fa4ef7f7',
+    password:'c1bbb940',
+    database:'heroku_a457de2669210f3'
     
-//})
+})
 //mongodb+srv://sther:<password>@cluster0.osywkt4.mongodb.net/?retryWrites=true&w=majority
 //mysql://be7aa5fa4ef7f7:c1bbb940@us-cdbr-east-05.cleardb.net/heroku_a457de2669210f3?reconnect=true
 
