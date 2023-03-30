@@ -13,8 +13,8 @@
     "my-portfolio": "cd my-portfolio && npm start"
   },
   "engines": {
-    "node": "14.4.0",
-    "npm": "6.14.5"
+    "node": "14.x"
+   
   },
   "author": "",
   "license": "ISC",
