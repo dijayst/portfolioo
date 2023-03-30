@@ -598,13 +598,11 @@ console.log(result)
 
 
 //post from signin
-/*
+
 app.listen(process.env.PORT || PORT,()=>{
     console.log("server running on port 5050")
 })
-*/
-app.listen( PORT,()=>{
-    console.log("server running on port 5050")
-})
+
+//app.listen( PORT,()=>{ console.log("server running on port 5050")})
 
 
