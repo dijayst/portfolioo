@@ -94,7 +94,7 @@ const Contact = () => {
  
     const handlesubmit=(e)=>{
         e.preventDefault()
-        axios.post("https://eembryo.herokuapp.com/contactme",{
+        axios.post("https://stormy-brook-52450.herokuapp.com/contactme",{
             Name:input.Name,
             Email:input.Email,
             Message:input.Message,
