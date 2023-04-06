@@ -25,7 +25,7 @@ console.log(range)
   //   const slide=()=>{ setIndex((prevIndex)=>prevIndex + 1) }
     
     useEffect(()=>{
-        axios.get("https://eembryo.herokuapp.com/stack")
+        axios.get("https://stormy-brook-52450.herokuapp.com/stack")
         .then(Response=>{
             setrange(Response.data)
             setrange(Response.data.range)
@@ -61,7 +61,7 @@ setrange(e.target.value)
 console.log(range)
     }*/
     useEffect(()=>{
-        axios.get("https://eembryo.herokuapp.com/range")
+        axios.get("https://stormy-brook-52450.herokuapp.com/range")
         .then(Response=>{
             setrangee(Response.data)
             

@@ -4,7 +4,7 @@ import axios from 'axios';
 const Works = () => {
     const [projects, setproject] = useState([]);
     useEffect(() => {
-       axios.get("https://eembryo.herokuapp.com/project")
+       axios.get("https://stormy-brook-52450.herokuapp.com/project")
        
         .then((Response)=>{
 

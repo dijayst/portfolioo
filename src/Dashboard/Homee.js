@@ -9,7 +9,7 @@ const Homee = () => {
  
      const [rangee, setrangee] = useState([])
     useEffect(()=>{
-        axios.get("https://eembryo.herokuapp.com/api/getcustomer")
+        axios.get("https://stormy-brook-52450.herokuapp.com/api/getcustomer")
         .then((Response)=>{
             setrangee(Response.data)
             //setproductlist(Response.productimage)

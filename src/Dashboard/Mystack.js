@@ -24,7 +24,7 @@ e.preventDefault()
 //console.log(cost)
 //  console.log(e.target.value)
 
-axios.post("https://eembryo.herokuapp.com/range",{
+axios.post("https://stormy-brook-52450.herokuapp.com/range",{
 Rang:Rangeinper.Rang,
 name:Rangeinper.name,
 })
@@ -77,7 +77,7 @@ console.log("i deny")
     
         //console.log(e.target.files);
        // console.log({description});
-            axios.post("https://eembryo.herokuapp.com/stack",formdata,
+            axios.post("https://stormy-brook-52450.herokuapp.com/stack",formdata,
              /* {headers:{"content-Type":"multipart/form-data"},
             
              productimage:userinfo.file,
