@@ -11,7 +11,7 @@ const PORT=process.env.PORT|| 5050;
 
 //const PORT=process.env.MONGODB_CONNECTION_STRING|| 5050;
 //const PORT=5050;
-const bcrypt =require('bcrypt')
+const bcrypt =require('bcryptjs')
 const session =require("express-session");
 const cookieParser = require("cookie-parser")
 const saltRounds =10
