@@ -1,10 +1,9 @@
-/*
- @media (max-width:700px){
+@import 'config';
+ 
+@media screen and (max-width:700px){
     .App{
         
-        
     }
-
 
     .nav-menu {
       display: flex;
@@ -19,7 +18,7 @@
     }
   
     .nav-menu.active {
-      background: $backgroundcolor;
+      background: $navbackground;
       height: 100%;
       left: 0;
       opacity: 1;
@@ -136,14 +135,43 @@ top: -50px;
   .content1{
     background-color: $backgroundcolor;
   margin: 1% 0% 0% -0%;
-  }}
   
   .gitimage{
+   
     font-size: 40px;
-  width: 100%;
+    margin:0px 0px 200px 0px;
+    width: 135%;
+   .imge{
+     display: block; 
+ width: 90%;
+ height: 510px;
+ }
+ h4 {
+     margin: -300px 0px 0px 0px;
+     text-align: center;
+     z-index: 0;
+ 
+ }
+ button {
+     margin: -200px 0px 0px 0px;
+     z-index: 0;
+     text-decoration: none;
+     height: 30px;
+     width: 150px;
+     a{
+         text-decoration: none;
+     }
+ }
+ 
+}
 
-  }
-
+  .textdiv{
+    //background-color: goldenrod;
+   width: 135%;
+   margin: -65% 10% 0% 0%;
+   
+   }
+  }}
 }
 
 .btn{
@@ -164,7 +192,7 @@ top: -50px;
 
 
 
-
+/*
 
  
  @media (max-width:992px){
@@ -327,7 +355,7 @@ height: 20px;
 */
 
 
-
+/*
 
 @import 'config';
  
@@ -480,7 +508,7 @@ top: -50px;
     margin:0px 0px 200px 0px;
     width: 135%;
    .imge{
-     display: block; /* remove extra space below image */
+     display: block; 
  width: 90%;
  height: 510px;
  }
@@ -525,11 +553,7 @@ margin: -75% 0% 0% 0%;
  }
 
 
-
-
-
-
-
+*/
 
 
 
